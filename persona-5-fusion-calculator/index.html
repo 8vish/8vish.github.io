@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#B71C1C">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Persona 5 Fusion Calculator">
+    <title>Persona 5 Fusion Calculator</title>
+<meta name="description" content="Discover the art of Persona fusion in Persona 5 with our powerful fusion calculator. Unleash the potential of various fusion combinations to create new Personas and enhance your team's abilities. Dominate the battles in the Metaverse with strategic fusion choices and unravel the mysteries of the Phantom Thieves.">
+<meta name="keywords" content="Persona 5, fusion calculator, Persona fusion, fusion combinations, Personas, Metaverse, battles, Phantom Thieves">
+
+<link rel="icon" type="image/png" sizes="192x192" href="../images/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="../images/android-chrome-512x512.png">
+<link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png">
+<link rel="shortcut icon" type="image/x-icon" href="../images/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="style.css">
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.min.js"></script>
+    <script src="data/data5.js"></script>
+    <script src="data/personadata.js"></script>
+    <script src="data/skilldata.js"></script>
+    <script src="data/itemdata.js"></script>
+    <script>
+        var global_is_royal = false;
+    </script>
+    <script src="src/datautil.js"></script>
+    <script src="src/fusioncalculator.js"></script>
+    <script src="src/personacontroller.js"></script>
+    <script src="src/personalistcontroller.js"></script>
+    <script src="src/skilllistcontroller.js"></script>
+    <script src="src/settingcontroller.js"></script>
+    <script src="src/app.js"></script>
+</head>
+<body>
+</div>
+<!-- Navbar End -->  <div id="content">
+<h1>Persona 5 Fusion Calculator</h1>
+
+    <div id="links">
+        <b><a href="#/list/">Persona</a></b> - <b><a href="#/skill/">Skills</a></b> - <b><a href="#/setting/">Settings</a></b>
+    </div>
+    <div id="main">
+    <ng-view ng-app="myModule"></ng-view>
+     </div>
+     </div>
+</body>
+</html>
+     

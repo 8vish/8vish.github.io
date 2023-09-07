@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#B71C1C">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Persona 5 Fusion Calculator">
+    <title>Persona 5 Royal Fusion Calculator</title>
+    <meta name="description" content="Unlock the secrets of Persona fusion in Persona 5 Royal with our comprehensive fusion calculator. Discover new Personas by combining different Arcana and maximize your team's potential. Find the perfect fusion combinations and create powerful Personas to dominate the Metaverse.">
+<meta name="keywords" content="Persona 5 Royal, fusion calculator, Persona fusion, Arcana, Personas, Metaverse, fusion combinations, team synergy">
+
+<link rel="icon" type="image/png" sizes="192x192" href="../images/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="../images/android-chrome-512x512.png">
+<link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png">
+<link rel="shortcut icon" type="image/x-icon" href="../images/favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.min.js"></script>
+    <script src="data/data5royal.js"></script>
+    <script src="data/personadataroyal.js"></script>
+    <script src="data/skilldataroyal.js"></script>
+    <script src="data/itemdataroyal.js"></script>    
+    <script>
+        // dirty quick hack
+        var GLOBAL_IS_ROYAL = true;
+        var rarePersonae = rarePersonaeRoyal;
+        var rareCombos = rareCombosRoyal;
+        var arcana2Combos = arcana2CombosRoyal;
+        var specialCombos = specialCombosRoyal;
+        var dlcPersona = dlcPersonaRoyal;
+        var personaMap = personaMapRoyal;
+        var skillMap = skillMapRoyal;
+        var itemMap = itemMapRoyal;
+        var inheritanceChart = inheritanceChartRoyal;
+    </script>
+    <script src="src/datautil.js"></script>
+    <script src="src/fusioncalculator.js"></script>
+    <script src="src/personacontroller.js"></script>
+    <script src="src/personalistcontroller.js"></script>
+    <script src="src/skilllistcontroller.js"></script>
+    <script src="src/settingcontroller.js"></script>
+    <script src="src/app.js"></script>    
+ 
+</head>
+<body>
+<style>
+
+  .iframe-container iframe {
+    width: 100%;
+  }
+</style>
+
+  <div id="content">
+    <h1>Persona 5 Fusion Calculator</h1>
+    
+        <div id="links">
+            <b><a href="#/list/">Persona</a></b> - <b><a href="#/skill/">Skills</a></b> - <b><a href="#/setting/">Settings</a></b>
+        </div>
+        <div id="main">
+        <ng-view ng-app="myModule"></ng-view>
+         </div>
+</body>
+</html>
