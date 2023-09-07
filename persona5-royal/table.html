@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#B71C1C">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Persona 5 Fusion Calculator">
+    <title>Persona 5 Royal Fusion Calculator</title>
+    <meta name="description" content="Unlock the secrets of Persona fusion in Persona 5 Royal with our comprehensive fusion calculator. Discover new Personas by combining different Arcana and maximize your team's potential. Find the perfect fusion combinations and create powerful Personas to dominate the Metaverse.">
+<meta name="keywords" content="Persona 5 Royal, fusion calculator, Persona fusion, Arcana, Personas, Metaverse, fusion combinations, team synergy">
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org/",
+  "@type": "SoftwareApplication",
+  "name": "Persona 5 Royal Fusion Calculator",
+  "operatingSystem": "All",
+  "applicationCategory": "Calculator",
+  "offers": {
+    "@type": "Offer",
+    "price": "0.00",
+    "priceCurrency": "USD"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "reviewCount": "21826"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Using the Persona 5 Royal Fusion Calculator",
+  "description": "Learn how to use the Persona 5 Royal Fusion Calculator to create powerful Personas for your team.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "Step 1: Explore the Persona List",
+      "text": "Start by exploring the extensive Persona List provided by the Fusion Calculator. This comprehensive collection includes a wide variety of Personas such as Arsène, Jack-o'-Lantern, Pixie, and Agathion. Each Persona has its own unique set of abilities and elemental affinities. Take your time to browse through the list and familiarize yourself with the options available. Make note of the Arcana, inheritances, and level requirements for each Persona. This information will be crucial when planning your fusion strategy.",
+      "image": "https://fusioncalculator.xyz/images/Persona-5-Royal-List.webp"
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Step 2: Discover Detailed Persona Information",
+      "text": "When you find a Persona that catches your interest, click on its name to reveal detailed information. This will open up a window with itemization details, in-depth stats, and a list of skills the Persona can learn. Pay close attention to the elemental affinities and skill inheritance type. Understanding the strengths and weaknesses of a Persona will help you make informed fusion decisions.",
+      "image": "https://fusioncalculator.xyz/images/Discover-Detailed-Persona-5-Royal-Information.webp"
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Step 3: Experiment with Fusion Recipes",
+      "text": "Now it's time to experiment with fusion recipes! The Fusion Calculator provides a variety of fusion combinations that can create powerful Personas. For example, you can fuse Pixie (Lovers Arcana) with Jack-o'-Lantern (Magician Arcana) to create Agathion (Chariot Arcana). Explore different fusion options, considering the inheritances and elemental affinities of the Personas involved. Take advantage of the calculator's guidance to create unique and formidable allies.",
+      "image": "https://fusioncalculator.xyz/images/Persona-5-Royal-Fusion-Recipe.webp"
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Step 4: Plan Your Fusion Strategy",
+      "text": "With a deeper understanding of fusion recipes and Persona traits, it's time to strategize. Consider the strengths and weaknesses of each Persona, as well as the skills they can learn. Create a fusion strategy that balances various elemental affinities and covers a wide range of abilities. Plan your team composition to optimize your party's synergy in battles. Experiment with different fusion combinations to find the perfect mix of Personas for your playstyle.",
+      "image": "https://fusioncalculator.xyz/images/Plan-Your-Fusion-Strategy-in-Persona-5-Royal.webp"
+    }
+  ]
+}
+</script>
+
+
+<link rel="icon" type="image/png" sizes="192x192" href="../images/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="../images/android-chrome-512x512.png">
+<link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png">
+<link rel="shortcut icon" type="image/x-icon" href="../images/favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.min.js"></script>
+    <script src="data/Data5Royal.js"></script>
+    <script src="data/PersonaDataRoyal.js"></script>
+    <script src="data/SkillDataRoyal.js"></script>
+    <script src="data/ItemDataRoyal.js"></script>
+    <script>
+        // dirty quick hack
+        var GLOBAL_IS_ROYAL = true;
+        var rarePersonae = rarePersonaeRoyal;
+        var rareCombos = rareCombosRoyal;
+        var arcana2Combos = arcana2CombosRoyal;
+        var specialCombos = specialCombosRoyal;
+        var dlcPersona = dlcPersonaRoyal;
+        var personaMap = personaMapRoyal;
+        var skillMap = skillMapRoyal;
+        var itemMap = itemMapRoyal;
+        var inheritanceChart = inheritanceChartRoyal;
+    </script>
+    <script src="src/DataUtil.js"></script>
+    <script src="src/FusionCalculator.js"></script>
+    <script src="src/PersonaController.js"></script>
+    <script src="src/PersonaListController.js"></script>
+    <script src="src/SkillListController.js"></script>
+    <script src="src/SettingController.js"></script>
+    <script src="src/App.js"></script>
+ 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1YRC5KRYM5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1YRC5KRYM5');
+</script>
+</head>
+<body>
+
+    <div id="content">
+        <h1>Persona 5 Royal Fusion Calculator</h1>
+        
+            <div id="links">
+                <b><a href="#/list/">Persona</a></b> - <b><a href="#/skill/">Skills</a></b> - <b><a href="#/setting/">Settings</a></b>
+            </div>
+            <div id="main">
+            <ng-view ng-app="myModule"></ng-view>
+             </div>
+  
+
+
+
+</body>
+</html>
