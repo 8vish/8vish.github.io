@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MTG Land Calculator | Magic: The Gathering Deck Probability Tool</title>
+    <meta name="description" content="Calculate the probability of drawing specific land cards in your Magic: The Gathering (MTG) deck. Analyze your deck's performance with our MTG Land Probability Calculator. Fine-tune your strategy for better gameplay.">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body class="bg-gray-100">
+    <div class="min-h-screen d-flex align-items-center justify-content-center">
+        <div class="bg-white rounded-lg shadow-lg p-4 w-50">
+            <h1 class="text-center">MTG Land Calculator</h1>
+            <div class="form-group">
+                <label for="landsInDeck" class="text-sm mb-1">Number of Lands in Your Deck:</label>
+                <input type="number" id="landsInDeck" class="form-control" min="0" max="60" step="1" value="24">
+            </div>
+            <div class="form-group">
+                <label for="handSize" class="text-sm mb-1">Hand Size:</label>
+                <input type="range" id="handSize" min="1" max="7" step="1" value="7" class="form-control-range">
+                <span id="handSizeValue" class="text-sm text-muted">Hand Size: 7</span>
+            </div>
+            <button onclick="calculateProbabilities()" class="btn btn-primary btn-block">Calculate</button>
+            <div class="mt-4">
+                <canvas id="chart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        let chart;
+
+        function choose(n, k) {
+            if (k === 0) return 1;
+            return (n * choose(n - 1, k - 1)) / k;
+        }
+
+        function mtgLandProbability(landsInDeck, handSize) {
+            const totalCards = 60;
+            const probabilities = [];
+
+            for (let k = 0; k <= handSize; k++) {
+                const numerator = choose(landsInDeck, k) * choose(totalCards - landsInDeck, handSize - k);
+                const denominator = choose(totalCards, handSize);
+                const probability = numerator / denominator;
+                probabilities.push(probability);
+            }
+
+            return probabilities;
+        }
+
+        function updateHandSizeValue() {
+            const handSizeValueSpan = document.getElementById("handSizeValue");
+            const handSizeRange = document.getElementById("handSize");
+            handSizeValueSpan.textContent = `Hand Size: ${handSizeRange.value}`;
+        }
+
+        function calculateProbabilities() {
+            const landsInDeck = parseInt(document.getElementById("landsInDeck").value, 10);
+            if (isNaN(landsInDeck) || landsInDeck < 0 || landsInDeck > 60) {
+                alert("Please enter a valid number of lands (0 to 60).");
+                return;
+            }
+
+            const handSizeRange = document.getElementById("handSize");
+            const handSize = parseInt(handSizeRange.value, 10);
+
+            const probabilities = mtgLandProbability(landsInDeck, handSize);
+
+            if (chart) {
+                chart.destroy(); // Destroy the previous chart instance if it exists.
+            }
+
+            const chartCanvas = document.getElementById("chart");
+            const chartLabels = Array.from({ length: handSize + 1 }, (_, i) => i + " land(s)");
+            const chartData = {
+                labels: chartLabels,
+                datasets: [
+                    {
+                        data: probabilities.map(probability => (probability * 100).toFixed(2)),
+                        backgroundColor: 'rgba(0, 123, 255, 0.5)',
+                        borderColor: 'rgba(0, 123, 255, 1)',
+                        borderWidth: 1,
+                    },
+                ],
+            };
+
+            const chartConfig = {
+                type: 'bar',
+                data: chartData,
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 100,
+                            title: {
+                                display: true,
+                                text: 'Probability (%)',
+                            },
+                        },
+                    },
+                },
+            };
+
+            chart = new Chart(chartCanvas, chartConfig);
+        }
+
+        document.getElementById("handSize").addEventListener("input", updateHandSizeValue);
+    </script>
+</body>
+</html>
