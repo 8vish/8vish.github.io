@@ -1,0 +1,299 @@
+
+@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap>
+);
+
+body {
+    background-color: #F1F1F1;
+    text-align: center;
+    font-family: 'Poppins', Arial, sans-serif;
+    color: #333333;
+    font-size: 20px;
+}
+
+h4 {
+    font-size: 16px;
+    margin: 0;
+}
+
+h1 {
+    font-size: 1.5rem;
+    font-weight: normal;
+    padding: 10px 20px;
+    border: 2px solid #ffffff;
+    border-radius: 5px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    font-family: 'Piazzolla', serif;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.picpok {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.picpokShiny {
+    width: 288px;
+    height: 288px;
+    object-fit: cover;
+}
+
+.pictype {
+    width: 89px;
+    height: 39px;
+}
+
+.button {
+    margin: 0;
+    font-size: 20px;
+    padding: 10px 10px 10px 10px;
+}
+
+h1 {
+    margin: 0;
+}
+
+h2 {
+    font-weight: 400;
+    margin: 0;
+    padding-bottom: 14px;
+    height: 20px;
+}
+
+h3 {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 0;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.shinies {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+#FP1,
+#FP2 {
+    padding-bottom: 4px;
+}
+
+#R2,
+#L2 {
+    height: 30px;
+}
+
+#bottom {
+    font-family: 'Arial', serif;
+    font-size: 12px;
+    position: fixed;
+    /* Change position to fixed */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 8px 0;
+    background-color: #333;
+    color: #fff;
+}
+
+.monstats {
+    padding-bottom: 2px;
+}
+
+.montotal {
+    padding-bottom: 10px;
+}
+
+.monab {
+    padding-bottom: 8px;
+}
+
+.monweak {
+    vertical-align: middle;
+    padding-bottom: 4px;
+}
+
+.monweak img {
+    width: 52px;
+    height: 22px;
+}
+
+.green-text {
+    color: green;
+}
+
+.red-text {
+    color: red;
+}
+
+a:link {
+    color: rgb(30, 130, 230);
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+a:visited {
+    color: darkorchid;
+    background-color: transparent;
+}
+
+a:active {
+    color: darkorchid;
+    background-color: transparent;
+    text-decoration: dashed;
+}
+
+input {
+    font-size: inherit;
+    font-family: inherit;
+}
+
+.calculator {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+buttons {
+    margin-top: 20px;
+}
+
+.calculator&gt *+* {
+    margin-top: 1rem;
+}
+
+.calculator input {
+    box-sizing: border-box;
+    padding: 0.5rem;
+    width: 100%;
+}
+
+.inputs&gt * {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.inputs&gt *+* {
+    margin-top: 1rem;
+}
+
+.buttons {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.buttons&gt * {
+    flex: 1 1 200px;
+}
+
+#stats {
+    font-size: 0.9rem;
+}
+
+#shinies {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+#grid {
+    display: flex;
+    width: 90vh;
+    padding: 5vh;
+    gap: 20px;
+}
+
+#button {
+    background: rgb(100, 154, 255);
+    background: linear-gradient(180deg, rgba(100, 154, 255, 1) 0%, rgba(69, 65, 185, 1) 100%);
+    border-color: rgb(100, 154, 255);
+    font-weight: bold;
+}
+
+
+/* Responsive Styles for Mobile */
+
+@media only screen and (max-width: 767px) {
+    .calculator {
+        padding: 1rem;
+    }
+    .calculator&gt *+* {
+        margin-top: 0.5rem;
+    }
+    .calculator input {
+        box-sizing: border-box;
+        padding: 0.5rem;
+        width: 100%;
+    }
+    .inputs&gt * {
+        display: block;
+    }
+    .inputs&gt *+* {
+        margin-top: 0.5rem;
+    }
+    .buttons {
+        display: flex;
+        flex-flow: row nowrap;
+        gap: 0.5rem;
+    }
+    .buttons&gt * {
+        flex: 1 1 33%;
+    }
+    #stats {
+        font-size: 0.9rem;
+    }
+    #shinies {
+        grid-template-columns: 1fr;
+    }
+}
+
+nav {
+    background-color: #333;
+    padding: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: #fff;
+    padding: 10px;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    background-color: #555;
+}
+
+#guide {
+    margin-top: 20px;
+    /* Add margin to create space between #stats and #guide */
+    margin-bottom: 20px;
+    /* Add margin to create space between #guide and the footer */
+    text-align: center;
+}
