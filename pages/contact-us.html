@@ -1,49 +1,112 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Contact Us</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css">
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-1YRC5KRYM5"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-1YRC5KRYM5');
-</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - LastFusion.com</title>
+    <!-- Add Bootstrap CSS link here -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Custom CSS for styling */
+        body {
+            background-color: #f8f9fa;
+        }
+        .header {
+            background-color: #343a40;
+            color: #fff;
+            padding: 20px 0;
+        }
+        .header h1 {
+            font-size: 36px;
+        }
+        .section {
+            background-color: #fff;
+            padding: 40px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .section h2 {
+            color: #343a40;
+            font-size: 28px;
+        }
+        .section p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        .contact-form {
+            background-color: #fff;
+            padding: 40px 0;
+        }
+        .contact-form .form-control {
+            margin-bottom: 15px;
+        }
+        .contact-info {
+            background-color: #343a40;
+            color: #fff;
+            padding: 20px 0;
+        }
+        .contact-info p {
+            margin-bottom: 0;
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-8 mx-auto mt-5">
-        <h1 class="text-center mb-4">Contact Us</h1>
-        <p>Thank you for your interest in Fusion Calculator! If you have any questions, suggestions, or feedback, please feel free to contact us using the information below:</p>
-        <h3>Contact Details</h3>
-        <p><strong>Name:</strong> Vishal</p>
-        <p><strong>Email:</strong> contact@fusioncalculator.xyz</p>
-        <p>We strive to respond to all inquiries within 24-48 hours. Your feedback is valuable to us, and we appreciate your patience.</p>
-        <h3>Contact Form</h3>
-        <form>
-          <div class="mb-3">
-            <label for="name" class="form-label">Name</label>
-            <input type="text" class="form-control" id="name" required>
-          </div>
-          <div class="mb-3">
-            <label for="email" class="form-label">Email</label>
-            <input type="email" class="form-control" id="email" required>
-          </div>
-          <div class="mb-3">
-            <label for="message" class="form-label">Message</label>
-            <textarea class="form-control" id="message" rows="5" required></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-      </div>
-    </div>
-  </div>
+    <header class="header text-center">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="/">LastFusion.com</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </nav>
+        <h1>Contact Us</h1>
+    </header>
 
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.bundle.min.js"></script>
+    <main>
+      
+
+        <div class="container mt-5 contact-form">
+            <h2>Contact Form</h2>
+            <form>
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" class="form-control" id="name" placeholder="Enter your name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea class="form-control" id="message" rows="4" placeholder="Enter your message"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </main>
+
+    <footer class="footer mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Contact Us</h5>
+                    <p>Email: contact@lastfusion.com</p>
+                </div>
+                <div class="col-md-6 text-right">
+                    <ul class="list-inline">
+                        <li class="list-inline-item"><a href="../pages/privacy-policy.html">Privacy Policy</a></li>
+                        <li class="list-inline-item"><a href="../pages/terms-and-conditions.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-md-12 text-center">
+                    <p>&copy; 2023 LastFusion.com. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Add Bootstrap JS and jQuery scripts here (same as in the previous example) -->
 </body>
 </html>
