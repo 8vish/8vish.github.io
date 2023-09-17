@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=7">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon Infinite Fusion Calculator</title>
+    <link rel="stylesheet" href="asset/poke.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <h1>Pokemon Infinite Fusion Calculator</h1>
+    <div id="text">
+        <p>
+            Welcome to the Pokemon Infinite Fusion Calculator! Fuse different Pokemon together and discover unique
+            combinations. Explore the vast possibilities of Pokemon fusion and create your ultimate team. Start fusing
+            now! </p>
+        <br>
+        <br>
+        <div class="calculator">
+            <div id="t1" class="inputs">
+                <label for="fname1">First Pokémon:</label>
+                <input list="dlPkmn" type="text" id="fname1" name="fname1" value="" autocomplete="off">
+                <input id="random1" type="button" class="button" value="R1" onclick="randomFirstPoke()">
+            </div>
+            <div id="t2" class="inputs" style="margin-top: 15px;">
+                <label for="fname2">Second Pokémon:</label>
+                <input list="dlPkmn" type="text" id="fname2" name="fname2" value="" autocomplete="off">
+                <input id="random2" type="button" class="button" value="R2" onclick="randomSecondPoke()">
+            </div>
+
+            <div class="buttons" style="margin-top: 20px;">
+                <div id="grid">
+                    <input id="random" type="button" class="button" value="Random" onclick="randomBothPoke()">
+                    <input id="reset" type="button" class="button" value="Reset" onclick="resetPoke()">
+                </div>
+            </div><br>
+            <input id="button" type="button" class="button" value="Fuse" onclick="fusePoke()"
+                style="margin-bottom: 20px;">
+
+        </div>
+    </div>
+    <!--  <button id="random" class="button" onclick="randomBothPoke()">Random</button>
+        <button id="reset" class="button" onclick="resetPoke()">Reset</button>
+        <div id="t1">
+            <label for="fname1">First Pokémon:</label>
+            <input list="dlPkmn" type="text" id="fname1" name="fname1" value="" autocomplete="off">
+            <button id="random1" class="button" onclick="randomFirstPoke()">R1</button><br>
+        </div>
+        <div id="t2">
+            <label for="fname2">Second Pokémon:</label>
+            <input list="dlPkmn" type="text" id="fname2" name="fname2" value="" autocomplete="off">
+            <button id="random2" class="button" onclick="randomSecondPoke()">R2</button><br>
+        </div>
+    </div>
+    <button id="button" class="button" onclick="fusePoke()">Fuse</button>-->
+    <sector id="stats" class="stats">
+        <div id="L2">
+            <div>
+                <a id="dexnumber1" href="javascript:void(0)">&nbsp;</a><a id="fusionid1"
+                    href="javascript:void(0)">&nbsp;</a>
+            </div>
+            <img class="picpok" id="pic1" alt="" src="question.png">
+            <div id="FP1">mon1/mon2</div>
+            <div id="typecont">
+                <img class="pictype" id="p1" src="https://aegide.pokemoninfinitefusion.io/types/unknown.png">
+                <img class="pictype" id="p2" style="display:none" src="javascript:void(0)">
+            </div>
+            <div class="monstats" id="hp1">HP: </div>
+            <div class="monstats" id="atk1">ATK: </div>
+            <div class="monstats" id="def1">DEF: </div>
+            <div class="monstats" id="spatk1">SPE.ATK: </div>
+            <div class="monstats" id="spdef1">SPE.DEF: </div>
+            <div class="monstats" id="spe1">SPEED: </div>
+            <div class="montotal" id="bs1">TOTAL: </div>
+            <div class="monab" id="ab1">ABILITY:</div>
+            <div class="monhab" id="hab1"></div>
+            <br>
+            <div class="monweak" data-default="x4: " id="weak14">x4: </div>
+            <div class="monweak" data-default="x2: " id="weak12">x2: </div>
+            <div class="monweak" data-default="x1: " id="weak11">x1: </div>
+            <div class="monweak" data-default="x0.5: " id="weak105">x0.5: </div>
+            <div class="monweak" data-default="x0.25: " id="weak1025">x0.25: </div>
+            <div class="monweak" data-default="x0: " id="weak100">x0: </div>
+        </div>
+        <div id="R2">
+            <div>
+                <a id="dexnumber2" href="javascript:void(0)">&nbsp;</a><a id="fusionid2"
+                    href="javascript:void(0)">&nbsp;</a>
+            </div>
+            <img class="picpok" id="pic2" alt="" src="question.png">
+            <div id="FP2">mon2/mon1</div>
+            <div id="typecont">
+                <img class="pictype" id="p3" src="https://aegide.pokemoninfinitefusion.io/types/unknown.png">
+                <img class="pictype" id="p4" style="display:none" src="javascript:void(0)">
+            </div>
+            <div class="monstats" id="hp2">HP: </div>
+            <div class="monstats" id="atk2">ATK: </div>
+            <div class="monstats" id="def2">DEF: </div>
+            <div class="monstats" id="spatk2">SPE.ATK: </div>
+            <div class="monstats" id="spdef2">SPE.DEF: </div>
+            <div class="monstats" id="spe2">SPEED: </div>
+            <div class="montotal" id="bs2">TOTAL: </div>
+            <div class="monab" id="ab2">ABILITY:</div>
+            <div class="monhab" id="hab2"></div>
+            <br>
+            <div class="monweak" data-default="x4: " id="weak24">x4: </div>
+            <div class="monweak" data-default="x2: " id="weak22">x2: </div>
+            <div class="monweak" data-default="x1: " id="weak21">x1: </div>
+            <div class="monweak" data-default="x0.5: " id="weak205">x0.5: </div>
+            <div class="monweak" data-default="x0.25: " id="weak2025">x0.25: </div>
+            <div class="monweak" data-default="x0: " id="weak200">x0: </div>
+        </div>
+    </sector>
+</body>
+<script src="asset/infiniteFusionData.js"></script>
+<script src="asset/poke.js"></script>
+
+</html>

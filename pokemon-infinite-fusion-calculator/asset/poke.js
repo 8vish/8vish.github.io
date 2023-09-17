@@ -55,9 +55,9 @@ pkmn2.addEventListener("keydown", function(event) {
 function resetPoke() {
     document.getElementById("fname1").value = null;
     document.getElementById("fname2").value = null;
-    document.getElementById("p1").src = "types/unknown.png";
+    document.getElementById("p1").src = "https://aegide.pokemoninfinitefusion.io/types/unknown.png";
     document.getElementById("p2").style = "display:none";
-    document.getElementById("p3").src = "types/unknown.png";
+    document.getElementById("p3").src = "https://aegide.pokemoninfinitefusion.io/types/unknown.png";
     document.getElementById("p4").style = "display:none";
     document.getElementById("pic1").src = "question.png";
     document.getElementById("pic2").src = "question.png";

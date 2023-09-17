@@ -1,36 +1,38 @@
-
-@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap>
-);
-
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 body {
-    background-color: #F1F1F1;
-    text-align: center;
-    font-family: 'Poppins', Arial, sans-serif;
-    color: #333333;
-    font-size: 20px;
+    font-family: 'Montserrat', sans-serif; /* Use a bold font like Montserrat */
+    background-color: #3498db; /* Set a background color *//* Set text color to white */
+    text-align: center; /* Center align text */
+    padding: 50px;
 }
 
-h4 {
-    font-size: 16px;
-    margin: 0;
+.container {
+    background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
+    border-radius: 20px; /* Add rounded corners */
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
 }
 
 h1 {
-    font-size: 1.5rem;
-    font-weight: normal;
-    padding: 10px 20px;
-    border: 2px solid #ffffff;
-    border-radius: 5px;
-    text-align: center;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+    font-size: 36px; /* Increase font size for emphasis */
+    font-weight: bold; /* Make text bold */
+    margin-bottom: 20px; /* Add some spacing below the heading */
 }
 
-label {
-    font-family: 'Piazzolla', serif;
-    font-weight: bold;
-    font-size: 25px;
+/* Create a curved design for the container */
+.container::before,
+.container::after {
+    content: "";
+    display: block;
+    height: 20px;
+    background: #fff; /* Use the background color for the curve */
+    border-radius: 0 0 20px 20px; /* Create a curved shape */
+}
+.container::before {
+    margin-bottom: -20px;
+}
+.container::after {
+    margin-top: -20px;
 }
 
 .picpok {
@@ -48,12 +50,6 @@ label {
 .pictype {
     width: 89px;
     height: 39px;
-}
-
-.button {
-    margin: 0;
-    font-size: 20px;
-    padding: 10px 10px 10px 10px;
 }
 
 h1 {
@@ -106,7 +102,6 @@ h3 {
     text-align: center;
     padding: 8px 0;
     background-color: #333;
-    color: #fff;
 }
 
 .monstats {
@@ -168,10 +163,6 @@ input {
     box-sizing: border-box;
 }
 
-buttons {
-    margin-top: 20px;
-}
-
 .calculator&gt *+* {
     margin-top: 1rem;
 }
@@ -191,13 +182,6 @@ buttons {
 
 .inputs&gt *+* {
     margin-top: 1rem;
-}
-
-.buttons {
-    display: flex;
-    flex-flow: row wrap;
-    gap: 1rem;
-    justify-content: center;
 }
 
 .buttons&gt * {
@@ -221,13 +205,14 @@ buttons {
     gap: 20px;
 }
 
+/*
 #button {
     background: rgb(100, 154, 255);
     background: linear-gradient(180deg, rgba(100, 154, 255, 1) 0%, rgba(69, 65, 185, 1) 100%);
     border-color: rgb(100, 154, 255);
     font-weight: bold;
 }
-
+*/
 
 /* Responsive Styles for Mobile */
 
@@ -235,31 +220,33 @@ buttons {
     .calculator {
         padding: 1rem;
     }
+
     .calculator&gt *+* {
         margin-top: 0.5rem;
     }
+
     .calculator input {
         box-sizing: border-box;
         padding: 0.5rem;
         width: 100%;
     }
+
     .inputs&gt * {
         display: block;
     }
+
     .inputs&gt *+* {
         margin-top: 0.5rem;
     }
-    .buttons {
-        display: flex;
-        flex-flow: row nowrap;
-        gap: 0.5rem;
-    }
+
     .buttons&gt * {
         flex: 1 1 33%;
     }
+
     #stats {
         font-size: 0.9rem;
     }
+
     #shinies {
         grid-template-columns: 1fr;
     }
@@ -281,7 +268,6 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #fff;
     padding: 10px;
     text-decoration: none;
 }
@@ -296,4 +282,199 @@ nav ul li a:hover {
     margin-bottom: 20px;
     /* Add margin to create space between #guide and the footer */
     text-align: center;
+}
+
+/* Common button styles */
+.button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+/* Desktop styles */
+@media (min-width: 768px) {
+    .buttons {
+        text-align: center;
+    }
+
+    .button {
+        background-color: #3498db;
+    }
+
+    .button:hover {
+        background-color: #2980b9;
+    }
+}
+
+/* Mobile styles */
+@media (max-width: 767px) {
+    .buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .button {
+        flex: 1 0 calc(33.33% - 10px);
+        /* Three buttons per row with spacing */
+        background-color: #3498db;
+    }
+
+    .button:hover {
+        background-color: #2980b9;
+    }
+}
+
+.calculator-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.calculator {
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.calculator-inputs {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group {
+    margin-bottom: 10px;
+}
+
+label {
+    font-weight: bold;
+}
+
+.form-style {
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.btn {
+    background-color: #3498db;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.button {
+    background-color: #27ae60;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #219653;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#PKML2,
+#PKMR2 {
+    flex: 1;
+    text-align: center;
+}
+
+#PKML2 img,
+#PKMR2 img {
+    max-width: 100px;
+    max-height: 100px;
+}
+
+.picpok {
+    margin: 10px auto;
+    display: block;
+}
+
+.monstats,
+.montotal,
+.monab,
+.monhab,
+.monweak {
+    font-size: 18px;
+    margin: 5px 0;
+    color: #555;
+}
+
+.montotal {
+    font-weight: bold;
+}
+
+.monab,
+.monhab {
+    font-style: italic;
+}
+
+.monweak::before {
+    content: attr(data-default);
+    font-weight: bold;
+}
+
+.pictype {
+    max-width: 24px;
+    max-height: 24px;
+    margin: 0 2px;
+}
+
+#typecont {
+    margin: 10px 0;
+}
+
+#typecont img {
+    display: inline-block;
+}
+
+#typecont img:first-child {
+    margin-left: 0;
+}
+
+#typecont img:last-child {
+    margin-right: 0;
+}
+
+/*
+#typecont img[src="https://aegide.pokemoninfinitefusion.io/types/unknown.png"] {
+    display: none;
+}
+*/
+#FP1,
+#FP2 {
+    font-weight: bold;
+}
+
+#dexnumber1,
+#dexnumber2 {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#fusionid1,
+#fusionid2 {
+    font-size: 18px;
+    font-style: italic;
 }
