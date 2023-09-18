@@ -7,8 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=7">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokemon Infinite Fusion Calculator</title>
-    <link rel="stylesheet" href="asset/poke.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="asset/style.css">
 </head>
 
 <body
@@ -28,12 +27,12 @@
                         <meta charset="utf-8">
                         <meta name="viewport" content="width=device-width, initial-scale=1.0">
                         <title>Infinite Fusion Calculator</title>
-                        <link rel="stylesheet" href="asset/poke.css">
-                        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+                        <link rel="stylesheet" href="asset/new.css">
+                        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.2/css/bulma.min.css">
                     </head>
              
                         <h1>Pokemon Infinite Fusion Calculator</h1>
-                        <div class="container1">
+                        <div class="container">
                             <p id="text">
                                 Welcome to the Pokemon Infinite Fusion Calculator! Fuse different Pokemon together and
                                 discover unique combinations. Explore the vast possibilities of Pokemon fusion and
@@ -53,16 +52,17 @@
                                             </div>
                                         </div>
                                         <div id="t2" class="select2">
+                                            <label for="fname2">Second Pokémon </label>
                                             <div class="input-group">
                                                 <input list="dlPkmn" type="text" id="fname2" name="fname2"
                                                     class="form-style" value="" autocomplete="off">
-                                                    <label for="fname2">Second Pokémon </label> <input id="random2" type="button" class="btn" value="⤭"
+                                                    <input id="random2" type="button" class="btn" value="⤭"
                                                     onclick="randomSecondPoke()">
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                           
                             <div class="buttons">
                                 <input id="random" type="button" class="button" value="Random" onclick="randomBothPoke()">
                                 <input id="reset" type="button" class="button" value="Reset" onclick="resetPoke()">
