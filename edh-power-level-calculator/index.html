@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EDH Power Level Calculator</title>
+    <meta name="description"
+        content="Calculate the power level of your EDH (Commander) deck with this handy online tool. Consider factors like Draw, Tutors, Ramp, Interaction, Commanders, Graveyard, Critical Turn, Fast Mana, and Permanents on Turn 2 to assess your deck's strength and competitiveness.">
+    <!-- Add Bootstrap CSS link -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">EDH Power Level Calculator</h1>
+        <div class="card">
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="draw">Draw Score:</label>
+                    <input type="number" class="form-control" id="draw" min="0" max="10">
+                </div>
+                <div class="form-group">
+                    <label for="tutors">Tutors Score:</label>
+                    <input type="number" class="form-control" id="tutors" min="0" max="10">
+                </div>
+                <div class="form-group">
+                    <label for="ramp">Ramp Score:</label>
+                    <input type="number" class="form-control" id="ramp" min="0" max="10">
+                </div>
+                <div class="form-group">
+                    <label for="interaction">Interaction Score:</label>
+                    <input type="number" class="form-control" id="interaction" min="0" max="10">
+                </div>
+                <div class="form-group">
+                    <label for="commanders">Commanders Score:</label>
+                    <input type="number" class="form-control" id="commanders" min="0" max="10">
+                </div>
+                <div class="form-group">
+                    <label for="graveyard">Graveyard Score:</label>
+                    <input type="number" class="form-control" id="graveyard" min="0" max="10">
+                </div>
+                <button class="btn btn-primary btn-block" id="calculate-button">Calculate</button>
+            </div>
+        </div>
+
+        <div class="result-section mt-4">
+            <h2 class="text-center">Power Level Score:</h2>
+            <p class="text-center font-weight-bold" id="power-level">-</p>
+        </div>
+    </div>
+
+    <!-- Add Bootstrap JS and jQuery scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
