@@ -2,11 +2,16 @@
 <html lang="en">
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>MTG Land Calculator | Magic: The Gathering Deck Probability Tool</title>
-    <meta name="description"
-        content="Calculate the probability of drawing specific land cards in your Magic: The Gathering (MTG) deck. Analyze your deck's performance with our MTG Land Probability Calculator. Fine-tune your strategy for better gameplay.">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MTG Land Calculator</title>
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Include FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Calculate the optimal land count for your Magic: The Gathering deck based on your desired land probability and mana curve.">
+    <meta name="keywords" content="MTG, Magic: The Gathering, Land Calculator, Deck Building, Mana Curve, Probability">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-1FENZWBJQP"></script>
     <script>
@@ -19,111 +24,147 @@
     <!--  Google Adsense Tag  -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3094576877738534"
         crossorigin="anonymous"></script>
+    <!-- Custom CSS for styling -->
+    <style>
+        .container {
+            max-width: 600px;
+        }
+
+        .btn-calculate {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+        }
+
+        .result-box {
+            background-color: #f8f9fa;
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+
+        .question-icon {
+            color: #000000;
+            cursor: pointer;
+        }
+
+        .guide {
+            display: none;
+            font-weight: 500;
+            font-style: italic;
+            color: #1d69be;
+        }
+    </style>
 </head>
 
-<body class="bg-gray-100 mt-4">
-    <div class="min-h-screen d-flex align-items-center justify-content-center">
-        <div class="bg-white rounded-lg shadow-lg p-4 w-50">
-            <h1 class="text-center">MTG Land Calculator</h1>
-            <div class="form-group">
-                <label for="landsInDeck" class="text-sm mb-1">Number of Lands in Your Deck:</label>
-                <input type="number" id="landsInDeck" class="form-control" min="0" max="60" step="1" value="24">
-            </div>
-            <div class="form-group">
-                <label for="handSize" class="text-sm mb-1">Hand Size:</label>
-                <input type="range" id="handSize" min="1" max="7" step="1" value="7" class="form-control-range">
-                <span id="handSizeValue" class="text-sm text-muted">Hand Size: 7</span>
-            </div>
-            <button onclick="calculateProbabilities()" class="btn btn-primary btn-block">Calculate</button>
-            <div class="mt-4">
-                <canvas id="chart"></canvas>
-            </div>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">MTG Land Calculator</h1>
+
+        <!-- Inputs for Deck Details -->
+        <div class="form-group">
+            <label for="total_cards">Total Cards in Deck:
+                <i class="fas fa-question-circle question-icon" data-toggle="tooltip" data-placement="top"
+                    title="Click for guide" data-guide="#totalCardsGuide"></i>
+                <div class="guide" id="totalCardsGuide">
+                    Enter the total number of cards in your MTG deck (minimum 60 cards for constructed formats).
+                </div>
+            </label>
+            <input type="number" class="form-control" id="total_cards" min="60" step="1" value="60">
+        </div>
+
+        <div class="form-group">
+            <label for="mana_curve">Total Mana Curve (sum of all CMCs):
+                <i class="fas fa-question-circle question-icon" data-toggle="tooltip" data-placement="top"
+                    title="Click for guide" data-guide="#manaCurveGuide"></i>
+                <div class="guide" id="manaCurveGuide">
+                    Calculate the sum of the converted mana costs (CMC) of all spells in your deck.
+                </div>
+            </label>
+            <input type="number" class="form-control" id="mana_curve" min="0" step="1" value="0">
+        </div>
+
+        <div class="form-group">
+            <label for="desired_land_probability">Desired Land Probability (%):
+                <i class="fas fa-question-circle question-icon" data-toggle="tooltip" data-placement="top"
+                    title="Click for guide" data-guide="#desiredLandGuide"></i>
+                <div class="guide" id="desiredLandGuide">
+                    Set the desired probability (in percentage) of drawing a land card in your opening hand or early
+                    turns.
+                </div>
+            </label>
+            <input type="number" class="form-control" id="desired_land_probability" min="0" max="100" step="1"
+                value="40">
+        </div>
+
+        <!-- Inputs for Special Considerations -->
+        <div class="form-group">
+            <label for="extra_land">Extra Land Cards (e.g., from card draw):
+                <i class="fas fa-question-circle question-icon" data-toggle="tooltip" data-placement="top"
+                    title="Click for guide" data-guide="#extraLandGuide"></i>
+                <div class="guide" id="extraLandGuide">
+                    Include the number of additional land cards in your deck, such as those gained from card draw
+                    effects.
+                </div>
+            </label>
+            <input type="number" class="form-control" id="extra_land" min="0" step="1" value="0">
+        </div>
+
+        <div class="form-group">
+            <label for="mana_sources">Total Non-Land Mana Sources (e.g., mana rocks):
+                <i class="fas fa-question-circle question-icon" data-toggle="tooltip" data-placement="top"
+                    title="Click for guide" data-guide="#manaSourcesGuide"></i>
+                <div class="guide" id="manaSourcesGuide">
+                    Specify the total number of non-land mana sources in your deck, such as mana rocks and mana dorks.
+                </div>
+            </label>
+            <input type="number" class="form-control" id="mana_sources" min="0" step="1" value="0">
+        </div>
+
+        <!-- Calculate Button -->
+        <button class="btn btn-calculate btn-block" id="calculateBtn">Calculate Land Count</button>
+
+        <!-- Land Count Result -->
+        <div class="result-box mt-3 text-center">
+            <h3>Recommended Land Count:</h3>
+            <p class="display-4" id="landCount">N/A</p>
         </div>
     </div>
 
+    <!-- Include Bootstrap JS and jQuery -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Custom JavaScript for land calculation -->
     <script>
-        let chart;
+        $(document).ready(function () {
+            // Initialize tooltips for question icons
+            $('[data-toggle="tooltip"]').tooltip();
 
-        function choose(n, k) {
-            if (k === 0) return 1;
-            return (n * choose(n - 1, k - 1)) / k;
-        }
+            // Show/hide guide when question icon is clicked
+            $('.question-icon').click(function () {
+                const guideId = $(this).data('guide');
+                $(guideId).toggle();
+            });
 
-        function mtgLandProbability(landsInDeck, handSize) {
-            const totalCards = 60;
-            const probabilities = [];
+            // Calculate land count logic
+            document.getElementById('calculateBtn').addEventListener('click', function () {
+                // Get values from input fields
+                const totalCards = parseInt(document.getElementById('total_cards').value);
+                const manaCurve = parseInt(document.getElementById('mana_curve').value);
+                const desiredLandProbability = parseInt(document.getElementById('desired_land_probability').value);
+                const extraLand = parseInt(document.getElementById('extra_land').value);
+                const manaSources = parseInt(document.getElementById('mana_sources').value);
 
-            for (let k = 0; k <= handSize; k++) {
-                const numerator = choose(landsInDeck, k) * choose(totalCards - landsInDeck, handSize - k);
-                const denominator = choose(totalCards, handSize);
-                const probability = numerator / denominator;
-                probabilities.push(probability);
-            }
+                // Calculate the recommended land count
+                const landCount = Math.ceil(((totalCards - manaSources - extraLand) / 100) * (desiredLandProbability * 0.01) * (manaCurve + extraLand));
 
-            return probabilities;
-        }
-
-        function updateHandSizeValue() {
-            const handSizeValueSpan = document.getElementById("handSizeValue");
-            const handSizeRange = document.getElementById("handSize");
-            handSizeValueSpan.textContent = `Hand Size: ${handSizeRange.value}`;
-        }
-
-        function calculateProbabilities() {
-            const landsInDeck = parseInt(document.getElementById("landsInDeck").value, 10);
-            if (isNaN(landsInDeck) || landsInDeck < 0 || landsInDeck > 60) {
-                alert("Please enter a valid number of lands (0 to 60).");
-                return;
-            }
-
-            const handSizeRange = document.getElementById("handSize");
-            const handSize = parseInt(handSizeRange.value, 10);
-
-            const probabilities = mtgLandProbability(landsInDeck, handSize);
-
-            if (chart) {
-                chart.destroy(); // Destroy the previous chart instance if it exists.
-            }
-
-            const chartCanvas = document.getElementById("chart");
-            const chartLabels = Array.from({ length: handSize + 1 }, (_, i) => i + " land(s)");
-            const chartData = {
-                labels: chartLabels,
-                datasets: [
-                    {
-                        data: probabilities.map(probability => (probability * 100).toFixed(2)),
-                        backgroundColor: 'rgba(0, 123, 255, 0.5)',
-                        borderColor: 'rgba(0, 123, 255, 1)',
-                        borderWidth: 1,
-                    },
-                ],
-            };
-
-            const chartConfig = {
-                type: 'bar',
-                data: chartData,
-                options: {
-                    scales: {
-                        y: {
-                            beginAtZero: true,
-                            max: 100,
-                            title: {
-                                display: true,
-                                text: 'Probability (%)',
-                            },
-                        },
-                    },
-                },
-            };
-
-            chart = new Chart(chartCanvas, chartConfig);
-        }
-
-        document.getElementById("handSize").addEventListener("input", updateHandSizeValue);
+                // Display the result
+                document.getElementById('landCount').textContent = landCount;
+            });
+        });
     </script>
 </body>
 
