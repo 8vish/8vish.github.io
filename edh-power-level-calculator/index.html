@@ -5,69 +5,184 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EDH Power Level Calculator</title>
-    <meta name="description"
-        content="Calculate the power level of your EDH (Commander) deck with this handy online tool. Consider factors like Draw, Tutors, Ramp, Interaction, Commanders, Graveyard, Critical Turn, Fast Mana, and Permanents on Turn 2 to assess your deck's strength and competitiveness.">
-    <!-- Add Bootstrap CSS link -->
+    <!-- Include Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="styles.css">
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1FENZWBJQP"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
+    <!-- Include FontAwesome for question mark icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="Calculate the power level of your EDH (Commander) deck based on various criteria.">
+    <meta name="keywords" content="EDH, Commander, Power Level, Deck, MTG, Magic: The Gathering">
+    <meta name="author" content="Vishal Chamar">
+     <!-- Google tag (gtag.js) -->
+     <script async src="https://www.googletagmanager.com/gtag/js?id=G-1FENZWBJQP"></script>
+     <script>
+         window.dataLayer = window.dataLayer || [];
+         function gtag() { dataLayer.push(arguments); }
+         gtag('js', new Date());
+ 
+         gtag('config', 'G-1FENZWBJQP');
+     </script>
+     <!--  Google Adsense Tag  -->
+     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3094576877738534"
+         crossorigin="anonymous"></script>
+    <!-- Custom CSS for help icons -->
+    <style>
+        .help-icon {
+            cursor: pointer;
+            color: #007bff;
+        }
 
-        gtag('config', 'G-1FENZWBJQP');
-    </script>
-    <!--  Google Adsense Tag  -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3094576877738534"
-        crossorigin="anonymous"></script>
+        .help-icon:hover {
+            text-decoration: underline;
+        }
+
+        .help-text {
+            display: none;
+            position: absolute;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 4px;
+            z-index: 100;
+        }
+    </style>
 </head>
 
 <body>
     <div class="container mt-5">
-        <h1 class="text-center">EDH Power Level Calculator</h1>
-        <div class="card">
-            <div class="card-body">
-                <div class="form-group">
-                    <label for="draw">Draw Score:</label>
-                    <input type="number" class="form-control" id="draw" min="0" max="10">
-                </div>
-                <div class="form-group">
-                    <label for="tutors">Tutors Score:</label>
-                    <input type="number" class="form-control" id="tutors" min="0" max="10">
-                </div>
-                <div class="form-group">
-                    <label for="ramp">Ramp Score:</label>
-                    <input type="number" class="form-control" id="ramp" min="0" max="10">
-                </div>
-                <div class="form-group">
-                    <label for="interaction">Interaction Score:</label>
-                    <input type="number" class="form-control" id="interaction" min="0" max="10">
-                </div>
-                <div class="form-group">
-                    <label for="commanders">Commanders Score:</label>
-                    <input type="number" class="form-control" id="commanders" min="0" max="10">
-                </div>
-                <div class="form-group">
-                    <label for="graveyard">Graveyard Score:</label>
-                    <input type="number" class="form-control" id="graveyard" min="0" max="10">
-                </div>
-                <button class="btn btn-primary btn-block" id="calculate-button">Calculate</button>
+        <h1 class="mb-4">EDH Power Level Calculator</h1>
+
+        <!-- Deck Criteria -->
+        <div class="form-group">
+            <label for="card_advantage">Card Advantage (0-10):</label>
+            <input type="number" class="form-control" id="card_advantage" min="0" max="10" value="0">
+            <i class="fas fa-question-circle help-icon" data-toggle="tooltip" data-placement="top"
+                title="Click for help" data-help-text="cardAdvantageHelp"></i>
+            <div class="help-text" id="cardAdvantageHelp">
+                Card advantage measures your deck's ability to draw cards or generate card advantage. A higher rating
+                means better card draw and advantage.
             </div>
         </div>
 
-        <div class="result-section mt-4">
-            <h2 class="text-center">Power Level Score:</h2>
-            <p class="text-center font-weight-bold" id="power-level">-</p>
+        <div class="form-group">
+            <label for="interaction">Interaction (0-10):</label>
+            <input type="number" class="form-control" id="interaction" min="0" max="10" value="0">
+            <i class="fas fa-question-circle help-icon" data-toggle="tooltip" data-placement="top"
+                title="Click for help" data-help-text="interactionHelp"></i>
+            <div class="help-text" id="interactionHelp">
+                Interaction evaluates your deck's ability to interact with other players' boards or strategies. A higher
+                rating means more interaction.
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="combos">Combos (0-10):</label>
+            <input type="number" class="form-control" id="combos" min="0" max="10" value="0">
+            <i class="fas fa-question-circle help-icon" data-toggle="tooltip" data-placement="top"
+                title="Click for help" data-help-text="combosHelp"></i>
+            <div class="help-text" id="combosHelp">
+                Combos indicate the presence of game-winning combos or synergistic card combinations. A higher rating
+                means stronger combos.
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="synergy">Synergy (0-10):</label>
+            <input type="number" class="form-control" id="synergy" min="0" max="10" value="0">
+            <i class="fas fa-question-circle help-icon" data-toggle="tooltip" data-placement="top"
+                title="Click for help" data-help-text="synergyHelp"></i>
+            <div class="help-text" id="synergyHelp">
+                Synergy measures how well cards in your deck work together. A higher rating means better synergy.
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="removal">Removal (0-10):</label>
+            <input type="number" class="form-control" id="removal" min="0" max="10" value="0">
+            <i class="fas fa-question-circle help-icon" data-toggle="tooltip" data-placement="top"
+                title="Click for help" data-help-text="removalHelp"></i>
+            <div class="help-text" id="removalHelp">
+                Removal evaluates your deck's ability to deal with threats or problematic permanents. A higher rating
+                means better removal options.
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="ramp">Ramp (0-10):</label>
+            <input type="number" class="form-control" id="ramp" min="0" max="10" value="0">
+            <i class="fas fa-question-circle help-icon" data-toggle="tooltip" data-placement="top"
+                title="Click for help" data-help-text="rampHelp"></i>
+            <div class="help-text" id="rampHelp">
+                Ramp evaluates your deck's ability to accelerate its mana production. A higher rating means better mana
+                ramp.
+            </div>
+        </div>
+
+        <!-- Calculate Button -->
+        <button class="btn btn-primary" id="calculateBtn">Calculate Power Level</button>
+
+        <!-- Power Level Result -->
+        <div class="mt-3">
+            <h3>Power Level:</h3>
+            <p id="powerLevel">N/A</p>
         </div>
     </div>
 
-    <!-- Add Bootstrap JS and jQuery scripts -->
+    <!-- Include Bootstrap JS and jQuery -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="script.js"></script>
+
+    <!-- Custom JavaScript for help icons and power level calculation -->
+    <script>
+        $(document).ready(function () {
+            // Initialize tooltips for help icons
+            $('[data-toggle="tooltip"]').tooltip();
+
+            // Show/hide help text when help icon is clicked
+            $('.help-icon').click(function () {
+                const helpTextId = $(this).data('help-text');
+                $(`#${helpTextId}`).toggle();
+            });
+
+            // Calculate power level logic
+            document.getElementById('calculateBtn').addEventListener('click', function () {
+                // Get values for all criteria fields
+                const cardAdvantage = parseInt(document.getElementById('card_advantage').value);
+                const interaction = parseInt(document.getElementById('interaction').value);
+                const combos = parseInt(document.getElementById('combos').value);
+                const synergy = parseInt(document.getElementById('synergy').value);
+                const removal = parseInt(document.getElementById('removal').value);
+                const ramp = parseInt(document.getElementById('ramp').value);
+
+                // Define weights for each criterion
+                const weights = {
+                    cardAdvantage: 2,
+                    interaction: 2,
+                    combos: 2,
+                    synergy: 2,
+                    removal: 1.5,
+                    ramp: 1.5
+                };
+
+                // Calculate the total power level
+                const totalWeight = Object.values(weights).reduce((acc, val) => acc + val, 0);
+                const weightedSum = (
+                    cardAdvantage * weights.cardAdvantage +
+                    interaction * weights.interaction +
+                    combos * weights.combos +
+                    synergy * weights.synergy +
+                    removal * weights.removal +
+                    ramp * weights.ramp
+                );
+                const averagePowerLevel = weightedSum / totalWeight;
+
+                // Display the result
+                document.getElementById('powerLevel').textContent = averagePowerLevel.toFixed(2);
+            });
+        });
+    </script>
 </body>
 
 </html>
