@@ -1,0 +1,85 @@
+/* Universal Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Font Styles */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #333; /* Dark background color */
+    color: #fff; /* Text color to white */
+    text-align: center;
+    padding: 20px; /* Add padding for better spacing */
+}
+
+/* Container Styles */
+.container {
+    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+    border-radius: 10px; /* Rounded corners for container */
+    padding: 20px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    max-width: 800px; /* Limit container width */
+    margin: 0 auto; /* Center the container horizontally */
+}
+
+/* Header Styles */
+h1 {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Pokemon Stat Box Styles */
+.stats {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stat-box {
+    background-color: #f9f9f9; /* Light gray background for stat box */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    display: none; /* Hide stat boxes by default */
+}
+
+/* Responsive Styles */
+@media only screen and (max-width: 767px) {
+    .container {
+        padding: 10px; /* Decrease padding for smaller screens */
+    }
+
+    .stat-box {
+        display: block; /* Show stat boxes individually on smaller screens */
+    }
+}
+/* Add Flexbox styles for the stats sections */
+.stats {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+    /* Wrap stats sections on smaller screens */
+    .row {
+        flex-wrap: wrap;
+    }
+    .col-md-6 {
+        flex-basis: 100%;
+        max-width: 100%;
+    }
+    .stats {
+        margin: 10px 0;
+    }
+}
