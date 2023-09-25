@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Pokemon Generator</title>
+     <!-- Meta tags for SEO -->
+     <meta name="description" content="Generate random Pokemon and view their details, abilities, types, and base stats.">
+     <meta name="keywords" content="Pokemon, Pokemon Generator, Random Pokemon, Random Pokemon Generator, Pokemon Types, Pokemon Abilities">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .result-table {
+            margin-top: 20px;
+        }
+
+        .result-table th {
+            background-color: #007BFF;
+            color: #fff;
+        }
+
+        .result-table td {
+            border: 1px solid #ccc;
+            padding: 8px;
+        }
+
+        .result-table img {
+            max-width: 150px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .generate-button {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center mt-4">Random Pokemon Generator</h1>
+        <div class="form-group">
+            <label for="generationSelect">Select Generation:</label>
+            <select class="form-control" id="generationSelect">
+                <option value="all">All Generations</option>
+                <!-- Generation options will be populated dynamically -->
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="typeSelect">Select Type:</label>
+            <select class="form-control" id="typeSelect">
+                <option value="all">All Types</option>
+                <!-- Type options will be populated dynamically -->
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="resultCount">Number of Results:</label>
+            <input type="number" class="form-control" id="resultCount" value="1" min="1">
+        </div>
+        <button class="btn btn-primary generate-button" id="generateBtn">Generate Pokemon</button>
+        <div id="resultsSection"></div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Function to fetch generations and types from the PokeAPI
+        function populateGenerationsAndTypes() {
+            const generationSelect = $("#generationSelect");
+            const typeSelect = $("#typeSelect");
+
+            // Fetch available generations from the PokeAPI
+            fetch("https://pokeapi.co/api/v2/generation")
+                .then((response) => response.json())
+                .then((data) => {
+                    data.results.forEach((generation) => {
+                        const option = document.createElement("option");
+                        option.value = generation.name;
+                        option.textContent = generation.name.replace("-", " ");
+                        generationSelect.append(option);
+                    });
+                });
+
+            // Fetch available types from the PokeAPI
+            fetch("https://pokeapi.co/api/v2/type")
+                .then((response) => response.json())
+                .then((data) => {
+                    data.results.forEach((type) => {
+                        const option = document.createElement("option");
+                        option.value = type.name;
+                        option.textContent = type.name.charAt(0).toUpperCase() + type.name.slice(1);
+                        typeSelect.append(option);
+                    });
+                });
+        }
+
+        // Initialize options when the page loads
+        populateGenerationsAndTypes();
+
+        // Function to fetch a random Pokemon based on generation and type
+        async function fetchRandomPokemon() {
+            const selectedGeneration = $("#generationSelect").val();
+            const selectedType = $("#typeSelect").val();
+            const resultCount = $("#resultCount").val();
+            const resultsSection = $("#resultsSection");
+
+            resultsSection.empty();
+
+            // Create a table to display the results
+            const resultTable = `
+                <table class="table result-table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Image</th>
+                            <th>Abilities</th>
+                            <th>Types</th>
+                            <th>Base Stats</th>
+                        </tr>
+                    </thead>
+                    <tbody id="resultTableBody">
+                    </tbody>
+                </table>
+            `;
+
+            resultsSection.append(resultTable);
+
+            const resultTableBody = $("#resultTableBody");
+
+            for (let i = 0; i < resultCount; i++) {
+                const randomId = Math.floor(Math.random() * 807) + 1; // Total Pokemon: 807
+                const pokemonResponse = await fetch(`https://pokeapi.co/api/v2/pokemon/${randomId}`);
+                const pokemonData = await pokemonResponse.json();
+
+                const pokemonName = pokemonData.name;
+                const pokemonImage = pokemonData.sprites.other["official-artwork"].front_default;
+                const abilities = pokemonData.abilities.map((ability) => ability.ability.name).join(', ');
+                const types = pokemonData.types.map((type) => type.type.name.charAt(0).toUpperCase() + type.type.name.slice(1)).join(', ');
+                const stats = pokemonData.stats.map((stat) => {
+                    return `${stat.stat.name}: ${stat.base_stat}`;
+                }).join('<br>');
+
+                // Create a row for each Pokemon
+                const resultTableRow = `
+                    <tr>
+                        <td>${pokemonName.toUpperCase()}</td>
+                        <td><img src="${pokemonImage}" alt="${pokemonName}" class="img-fluid"></td>
+                        <td>${abilities}</td>
+                        <td>${types}</td>
+                        <td>${stats}</td>
+                    </tr>
+                `;
+
+                resultTableBody.append(resultTableRow);
+            }
+        }
+
+        // Add event listener for the "Generate Pokemon" button
+        $(document).ready(function () {
+            $("#generateBtn").click(function () {
+                fetchRandomPokemon();
+            });
+        });
+    </script>
+</body>
+</html>
