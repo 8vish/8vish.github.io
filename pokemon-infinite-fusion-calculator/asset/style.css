@@ -128,7 +128,6 @@ input {
 }
 
 .calculator {
-    max-width: 800px;
     margin: 0 auto;
     padding: 2rem;
     box-sizing: border-box;
@@ -319,6 +318,8 @@ nav ul li a:hover {
 }
 
 .container {
+    text-align: center;
+    align-items: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 

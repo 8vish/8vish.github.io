@@ -1,11 +1,15 @@
-<!DOCTYPE html>
 <html lang="en">
+<!doctype html>
+<html lang="en-US">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=7">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokemon Infinite Fusion Calculator</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="description"
+        content="Explore the world of Pokémon fusion with the Pokémon Infinite Fusion Calculator. Fuse different Pokémon, discover unique combinations, and create your ultimate team. Find detailed stats and abilities for your fused Pokémon. Start fusing now and embark on a fusion adventure!">
+    <link rel="stylesheet" href="asset/style.css">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-1FENZWBJQP"></script>
     <script>
@@ -15,17 +19,39 @@
 
         gtag('config', 'G-1FENZWBJQP');
     </script>
-    <!-- Google Adsense Tag -->
+    <!--  Google Adsense Tag  -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3094576877738534"
         crossorigin="anonymous"></script>
 </head>
-<body>
+<link rel="stylesheet" href="">
+
+<body
+    class="home page-template page-template-pokemon page-template-index2 page-template-pokemonindex2-php page page-id-9 wp-embed-responsive is-light-theme no-js singular">
+    <div id="page" class="site">
+        <a class="skip-link screen-reader-text" href="#content">
+        </a>
+        <header id="masthead" class="site-header has-title-and-tagline">
+            <div class="site-branding">
+            </div><!-- .site-branding -->
+        </header><!-- #masthead -->
+        <div id="content" class="site-content">
+            <div id="primary" class="content-area">
+                < id="main" class="site-main">
+
+                    <head>
+                        <meta charset="utf-8">
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                        <title>Infinite Fusion Calculator</title>
+                        <link rel="stylesheet" href="asset/new.css">
+                        <link rel="stylesheet"
+                            href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.2/css/bulma.min.css">
+                    </head>
+
                     <h1>Pokemon Infinite Fusion Calculator</h1>
                     <div class="container">
                         <p id="text">
-                            Welcome to the Pokemon Infinite Fusion Calculator! Fuse different Pokemon together and
-                            discover unique combinations. Explore the vast possibilities of Pokemon fusion and
-                            create your ultimate team. Start fusing now!
+                            Welcome to Pokemon Infinite Fusion! Fuse, create, and customize with custom sprites. Start
+                            now!
                         </p>
                         <div class="calculator">
                             <div class="row">
@@ -53,13 +79,13 @@
                             </div>
 
                             <div class="buttons">
-                                <input id="random" type="button" class="button" value="Random"
+                                <input id="random" type="button" class="button" value="🎲 Random"
                                     onclick="randomBothPoke()">
-                                <input id="reset" type="button" class="button" value="Reset" onclick="resetPoke()">
-                                <input id="button" type="button" class="button" value="Fuse" onclick="fusePoke()">
+                                <input id="reset" type="button" class="button" value="🔄 Reset" onclick="resetPoke()">
+                                <input id="button" type="button" class="button" value="🧩 Fuse" onclick="fusePoke()">
                             </div>
 
-                            <section id="stats" class="stats">
+                            <sector id="stats" class="stats">
                                 <div id="PKML2">
                                     <div>
                                         <span id="dexnumber1">&nbsp;</span><span id="fusionid1">&nbsp;</span>
@@ -67,8 +93,7 @@
                                     <img class="picpok" id="pic1" alt="" src="question.png">
                                     <div id="FP1">pkm1/pkm2</div>
                                     <div id="typecont">
-                                        <img class="pictype" id="p1"
-                                            src="https://aegide.pokemoninfinitefusion.io/types/unknown.png">
+                                        <img class="pictype" id="p1" src="types/unknown.png">
                                         <img class="pictype" id="p2" style="display:none">
                                     </div>
                                     <div class="monstats" id="hp1">HP: </div>
@@ -95,8 +120,7 @@
                                     <img class="picpok" id="pic2" alt="" src="question.png">
                                     <div id="FP2">pkm2/pkm1</div>
                                     <div id="typecont">
-                                        <img class="pictype" id="p3"
-                                            src="https://aegide.pokemoninfinitefusion.io/types/unknown.png">
+                                        <img class="pictype" id="p3" src="types/unknown.png">
                                         <img class="pictype" id="p4" style="display:none">
                                     </div>
                                     <div class="monstats" id="hp2">HP: </div>
@@ -116,56 +140,65 @@
                                     <div class="monweak" data-default="x0.25: " id="weak2025">x0.25: </div>
                                     <div class="monweak" data-default="x0: " id="weak200">x0: </div>
                                 </div>
-                            </section>
+                            </sector>
                             <!--<p id="bottom">All rights reserved to Pokémon</p>-->
                             <br>
                             <br>
                             <hr>
                             <br>
-                            <article class="textcontent">
-                                Only works with <a href="https://infinitefusion.fandom.com/wiki/Pokédex">natives mons
-                                    available</a> in
-                                Pokémon Infinite Fusion v5 !<br>
-                                This project was created by <a href="https://twitter.com/SDM_0_">SDM0</a>,
-                                then maintained by <a href="https://github.com/Aegide">Aegide</a>.<br>
-                                The data used is from the game, but is mostly based on generation 7.
-                                <i><br><br>
-                                    autogen fusions were extracted and fixed by <a
-                                        href="https://github.com/Aegide">Aegide</a>.
-                                </i>
-                            </article>
-                            <br>
-                            <br>
-                            I have contacted and obtained permission from <a href="https://japeal.com/pkm">Japeal</a> to
-                            use a specific range of sprites relevant to Infinite Fusion.<br>
-                            Please contact them on twitter before using any of the autogen sprites.
-                            <br>
-                            <br>
-                            <br>
                         </div>
+                    </div>
+                            <div class="container" style="margin: 0px; padding: 0px;">
+                                <div class="container">
+                                <h2 class="title">How To use</h2>
+                       
+                            <div class="container">
+                                    <h2 class="title is-5">Step 1: Select Your Pokémon</h2>
+                                    <p>Selecting Your Pokémon Partners is Step One.
+                                    Pick two Pokémon to begin your fusion journey. Your starting point is the first, and the second will combine with it. Just enter their names in the appropriate areas.</p>
+                                    <h2 class="title is-5">Step 2: Unable to Choose? use Random!</h2>
+                                    <p>Feeling uncertain? Not at all a problem! Simply select a random Pokémon from the calculator by clicking the "⤭" button next to each Pokémon box. It's a great method to find some genuinely unusual pairings.</p>
+                                    <h2 class="title is-5">Step 3: Release Fusion's Magic</h2>
+                                    <p>The crucial moment has arrived: the merger! As you press the "Fuse" button, marvel as your chosen Pokémon fuses into a completely unexpected creature. Every fusion is an adventure, and there are countless potential outcomes.</p>
+                                    <h2 class="title is-5">Step 4: Learn More About Your Fusion</h2>
+                                    <p>You'll see a picture of your newly produced Pokémon after the fusing procedure. Let's examine its qualities in more detail:</p>
+                                    <ul>
+                                        <li><strong>Type:</strong> Learn more about the fusion's type, which outlines its advantages and disadvantages in combat. Because of it, every fusion is different.</li>
+                                        <li><strong>Stats:</strong> Become familiar with its fundamental statistics, such as HP, Attack, Defense, Special Attack, Special Defense, and Speed. How well it performs in combat is determined by these stats.</li>
+                                        <li><strong>Abilities:</strong> Find more about its main ability and hidden ability, both of which can offer special advantages in combat.</li>
+                                    </ul>
+                                    <h2 class="title is-5">Step 5: Continue the Fusion Fun!</h2>
+                                    <p>Why settle for one fusion? Your imagination is the limit with the Pokémon Infinite Fusion Calculator. To create your perfect Pokémon dream team, try out various combinations. You might stumble upon unbeatable combinations or create your own Pokémon legends.</p>
+
+                        </div>
+                    </div>
                     </div>
                 </main>
             </div>
         </div>
-        <footer id="colophon" class="site-footer">
-            <div class="site-info">
-                <div class="site-name">
-                    <!-- Add site name content here -->
-                </div>
-                <div class="powered-by">
-                    <!-- Add powered by content here -->
-                </div>
-            </div>
-        </footer>
     </div>
-    <script src="infiniteFusionData.js"></script>
-    <script src="script.js"></script>
-    <script>document.body.classList.remove("no-js");</script>
-    <script>
-        if (-1 !== navigator.userAgent.indexOf('MSIE') || -1 !== navigator.appVersion.indexOf('Trident/')) {
-            document.body.classList.add('is-IE');
-        }
-    </script>
-
 </body>
+<script src="asset/infiniteFusionData.js"></script>
+<script src="asset/poke.js"></script>
+</main><!-- #main -->
+</div><!-- #primary -->
+</div><!-- #content -->
+</div>
+<footer id="colophon" class="site-footer">
+    <div class="site-info">
+        <div class="site-name">
+        </div><!-- .site-name -->
+        <div class="powered-by">
+        </div><!-- .powered-by -->
+    </div><!-- .site-info -->
+</footer><!-- #colophon -->
+</div><!-- #page -->
+<script>document.body.classList.remove("no-js");</script>
+<script>
+    if (-1 !== navigator.userAgent.indexOf('MSIE') || -1 !== navigator.appVersion.indexOf('Trident/')) {
+        document.body.classList.add('is-IE');
+    }
+</script>
+</body>
+
 </html>
