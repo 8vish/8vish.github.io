@@ -328,13 +328,9 @@ nav ul li a:hover {
     margin-top: 50px;
 }
 
-.calculator li {
+.container li {
     text-align: left;
     margin-top: 5px;
     text-decoration: solid;
     font-style: italic;
-}
-
-.text {
-    
 }
