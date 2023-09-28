@@ -317,3 +317,24 @@ nav ul li a:hover {
 .title {
     margin-bottom: 20px;
 }
+
+.container .title {
+    text-align: center;
+    margin-top: 20;
+}
+
+.container p {
+    text-align: left;
+    margin-top: 50px;
+}
+
+.calculator li {
+    text-align: left;
+    margin-top: 5px;
+    text-decoration: solid;
+    font-style: italic;
+}
+
+.text {
+    
+}
