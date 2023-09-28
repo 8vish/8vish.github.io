@@ -318,6 +318,10 @@ nav ul li a:hover {
     margin-bottom: 20px;
 }
 
+.container {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 .container .title {
     text-align: center;
     margin-top: 20;
@@ -325,7 +329,8 @@ nav ul li a:hover {
 
 .container p {
     text-align: left;
-    margin-top: 50px;
+    margin-top: 30px;
+    margin-bottom: 20px;
 }
 
 .container li {
@@ -333,4 +338,8 @@ nav ul li a:hover {
     margin-top: 5px;
     text-decoration: solid;
     font-style: italic;
+}
+
+#howtotitle {
+    background-color: #2980b9;
 }
