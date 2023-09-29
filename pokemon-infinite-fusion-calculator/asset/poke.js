@@ -55,9 +55,9 @@ pkmn2.addEventListener("keydown", function(event) {
 function resetPoke() {
     document.getElementById("fname1").value = null;
     document.getElementById("fname2").value = null;
-    document.getElementById("p1").src = "https://aegide.pokemoninfinitefusion.io/types/unknown.png";
+    document.getElementById("p1").src = "types/unknown.png";
     document.getElementById("p2").style = "display:none";
-    document.getElementById("p3").src = "https://aegide.pokemoninfinitefusion.io/types/unknown.png";
+    document.getElementById("p3").src = "types/unknown.png";
     document.getElementById("p4").style = "display:none";
     document.getElementById("pic1").src = "question.png";
     document.getElementById("pic2").src = "question.png";
@@ -605,7 +605,7 @@ function fuseBothPoke(){
 
     for (var i = 0; i < typeName.length; i++) {
         var image = new Image();
-        image.src = "https://aegide.pokemoninfinitefusion.io/types/" + typeName[i] + ".png";
+        image.src = "types/" + typeName[i] + ".png";
         
         if (result1[i] == 4) {
             document.getElementById("weak14").appendChild(image);
@@ -636,7 +636,7 @@ function fuseBothPoke(){
 
     for (var i = 0; i < typeName.length; i++) {
         var image = new Image();
-        image.src = "https://aegide.pokemoninfinitefusion.io/types/" + typeName[i] + ".png";
+        image.src = "types/" + typeName[i] + ".png";
 
         if (result2[i] == 4) {
             document.getElementById("weak24").appendChild(image);
@@ -660,19 +660,19 @@ function fuseBothPoke(){
 
     typeComp += 1;
 
-    document.getElementById("p1").src = "https://aegide.pokemoninfinitefusion.io/types/" + fmonres1[0] + ".png";
+    document.getElementById("p1").src = "types/" + fmonres1[0] + ".png";
     if (fmonres1.length!=1 && (fmonres1.length == 2 && fmonres1[0] != fmonres1[1])) {
         document.getElementById("p2").style.display = "inline-block";
-        document.getElementById("p2").src = "https://aegide.pokemoninfinitefusion.io/types/" + fmonres1[1] + ".png";
+        document.getElementById("p2").src = "types/" + fmonres1[1] + ".png";
     } else {
         document.getElementById("p2").style.display = "none";
     }
 
-    document.getElementById("p3").src = "https://aegide.pokemoninfinitefusion.io/types/" + fmonres2[0] + ".png";
+    document.getElementById("p3").src = "types/" + fmonres2[0] + ".png";
 
     if (fmonres2.length!=1 && (fmonres2.length == 2 && fmonres2[0] != fmonres2[1])) {
         document.getElementById("p4").style.display = "inline-block";
-        document.getElementById("p4").src = "https://aegide.pokemoninfinitefusion.io/types/" + fmonres2[1] + ".png";
+        document.getElementById("p4").src = "types/" + fmonres2[1] + ".png";
     } else {
         document.getElementById("p4").style.display = "none";
     }
