@@ -1,8 +1,5 @@
 // Derived from:
-//  http://www.gamefaqs.com/ps2/937269-shin-megami-tensei-persona-3-fes/faqs/52659
-//  http://www.gamefaqs.com/ps2/937269-shin-megami-tensei-persona-3-fes/faqs/53404
-//  http://www.gamefaqs.com/ps2/937269-shin-megami-tensei-persona-3-fes/faqs/52531
-//  http://db.gamefaqs.com//portable/psp//file/persona_3_portable_fusion.png
+//  http://www.gamefaqs.com/psp/971508-shin-megami-tensei-persona-3-portable/faqs/64473
 
 const personae = [
     {'name': 'Orpheus',         'level':  1, 'arcana': 'Fool', 'special': true},
@@ -42,7 +39,7 @@ const personae = [
     {'name': 'Oberon',          'level': 15, 'arcana': 'Emperor'},
     {'name': 'Take-mikazuchi',  'level': 24, 'arcana': 'Emperor'},
     {'name': 'King Frost',      'level': 30, 'arcana': 'Emperor', 'item': true},
-    {'name': 'Raja Naga',       'level': 36, 'arcana': 'Emperor'},
+    {'name': 'Naga Raja',       'level': 36, 'arcana': 'Emperor'},
     {'name': 'Kingu',           'level': 46, 'arcana': 'Emperor'},
     {'name': 'Barong',          'level': 52, 'arcana': 'Emperor'},
     {'name': 'Odin',            'level': 57, 'arcana': 'Emperor', 'max': true},
@@ -505,7 +502,7 @@ const arcana3Combos = [
     {'source': ['Hierophant', 'Moon'        ], 'result': 'Temperance'  },
     {'source': ['Hierophant', 'Sun'         ], 'result': 'Temperance'  },
     {'source': ['Hierophant', 'Judgment'    ], 'result': 'Lovers'      },
-    {'source': ['Hierophant', 'Aeon'        ], 'result': 'Tower'       },
+    {'source': ['Hierophant', 'Aeon'        ], 'result': 'Temperance'  },
     {'source': ['Lovers',     'Lovers'      ], 'result': 'Lovers'      },
     {'source': ['Lovers',     'Chariot'     ], 'result': 'Strength'    },
     {'source': ['Lovers',     'Justice'     ], 'result': 'Hanged Man'  },

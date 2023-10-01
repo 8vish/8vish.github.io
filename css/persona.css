@@ -1,0 +1,108 @@
+
+
+/* Custom styling for the caption */
+.custom-caption {
+    text-align: center;
+    font-size: 20px;
+    color: #333;
+    margin: 20px 0;
+}
+
+.custom-caption span {
+    font-weight: bold;
+}
+
+.custom-caption span.color-red {
+    color: red;
+}
+
+.custom-caption span.color-slateblue {
+    color: slateblue;
+}
+
+/* Custom styling for the pagination */
+.pagination {
+    padding: 0px;
+    text-align: center;
+    margin: 20px;
+    font-size: 15px;
+}
+
+.pagination span {
+    cursor: pointer;
+    margin: 0 10px;
+}
+
+/* Custom styling for the responsive table */
+.table-responsive {
+    overflow-x: auto;
+}
+
+/* Custom styling for the table */
+.custom-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.custom-table th,
+.custom-table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.custom-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.custom-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.custom-table a {
+    text-decoration: none;
+    color: #007bff;
+    transition: color 0.2s;
+}
+
+.custom-table a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+/* Custom styling for the recipe components */
+.recipe-container {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.recipe-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+.recipe-description {
+    font-size: 16px;
+    color: #666;
+    margin-top: 10px;
+}
+
+/* Custom styling for buttons */
+.custom-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.custom-button:hover {
+    background-color: #0056b3;
+}
