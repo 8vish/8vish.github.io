@@ -1,17 +1,19 @@
 <div class="container">
-    <h4>Personas</h4>
+    <h4 style="text-align: center; margin: 10px; box-shadow: inset; margin-top: 50px;">Persona list</h4>
     <div class="row">
         <form class="col s12 m6">
             <div class="row">
-                <div class="input-field col s8">
+                <div id="search">
+                <div class="input-field col s8 text-center">
                     <label for="filter">Filter:</label>
                     <input type="text" id="filter" name="filter">
                 </div>
                 <div class="input-field col s4">
-                    <button class="btn waves-effect waves-light" ng:click="filter = ''">
+                    <button class="btn waves-effect waves-light right-align" ng:click="filter = ''">
                         Clear
                     </button>
                 </div>
+            </div>
             </div>
         </form>
     </div>

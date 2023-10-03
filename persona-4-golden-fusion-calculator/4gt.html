@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Persona 4 The Golden:: Triangle Fusion (beta)</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="/js/angular-0.9.19.min.js" ng:autobind></script>
     <script src="/js/data4g.js"></script>
     <script src="/js/app3.js"></script>
@@ -106,40 +107,39 @@
             </div>
 
             <!-- Result Container -->
-            
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Result</h5>
-                        <div class="result-info">
-                            <strong>Persona: </strong>
-                            <span ng:show="lalala.level > 0">
-                                <a
-                                    href="/persona-4-golden-fusion-calculator/#/persona/{{lalala.name}}">{{lalala.name}}</a>
-                            </span>
-                            <span ng:hide="lalala.level > 0">{{lalala.name}}</span>
-                        </div>
-                        <div class="result-info">
-                            <strong>Arcana: </strong>
-                            <span>{{lalala.arcana}}</span>
-                        </div>
-                        <div class="result-info">
-                            <strong>Level: </strong>
-                            <span>{{lalala.level}}</span>
-                        </div>
+
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Result</h5>
+                    <div class="result-info">
+                        <strong>Persona: </strong>
+                        <span ng:show="lalala.level > 0">
+                            <a href="/persona-4-golden-fusion-calculator/#/persona/{{lalala.name}}">{{lalala.name}}</a>
+                        </span>
+                        <span ng:hide="lalala.level > 0">{{lalala.name}}</span>
+                    </div>
+                    <div class="result-info">
+                        <strong>Arcana: </strong>
+                        <span>{{lalala.arcana}}</span>
+                    </div>
+                    <div class="result-info">
+                        <strong>Level: </strong>
+                        <span>{{lalala.level}}</span>
                     </div>
                 </div>
             </div>
         </div>
-        <script>
-            // Wait for the document to be ready
-            $(document).ready(function () {
-                // Initialize Select2 for persona selection
-                $('.inputPersona').select2();
+    </div>
+    <script>
+        // Wait for the document to be ready
+        $(document).ready(function () {
+            // Initialize Select2 for persona selection
+            $('.inputPersona').select2();
 
-                // Initialize Select2 for level selection (if needed)
-                $('.inputLevel').select2();
-            });
-        </script>
+            // Initialize Select2 for level selection (if needed)
+            $('.inputLevel').select2();
+        });
+    </script>
 </body>
 
 </html>
