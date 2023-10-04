@@ -5,12 +5,125 @@
 <title>Persona 3 FES Fusion Calculator</title>
 <link rel="stylesheet" href="/css/persona.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
 <script src="/js/angular-0.9.19.min.js" ng:autobind></script>
 <script src="/js/data3fes.js"></script>
 <script src="/js/app.js"></script>
 </head>
 <body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="nav-wrapper blue darken-3 m-4">
+      <a href="#" class="brand-logo" style="font-size: 1.2rem;">Persona Fusion Tool</a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">☰</i></a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="/">Home</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-trigger" data-target="persona1-dropdown">
+            Persona 3 FES<i class="material-icons right"></i>
+          </a>
+          <ul id="persona1-dropdown" class="dropdown-content">
+            <li><a href="/persona-3-fes-fusion-calculator/">Fusion Calculator</a></li>
+            <li><a href="/persona-3-fes-normal-fusion/">Normal Fusion</a></li>
+            <li><a href="/persona-3-fes-triangle-fusion/">Triangle Fusion</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-trigger" data-target="persona2-dropdown">
+            Perso<i class="material-icons right"></i>
+          </a>
+          <ul id="persona2-dropdown" class="dropdown-content">
+            <li><a href="#">Fusion Calculator</a></li>
+            <li><a href="#">Normal Fusion</a></li>
+            <li><a href="#">Triangle Fusion</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-trigger" data-target="persona3-dropdown">
+            Persona 3 <i class="material-icons right"></i>
+          </a>
+          <ul id="persona3-dropdown" class="dropdown-content">
+            <li><a href="#">Fusion Calculator</a></li>
+            <li><a href="#">Normal Fusion</a></li>
+            <li><a href="#">Triangle Fusion</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-trigger" data-target="persona4-dropdown">
+            Persona 4 <i class="material-icons right"></i>
+          </a>
+          <ul id="persona4-dropdown" class="dropdown-content">
+            <li><a href="#">Fusion Calculator</a></li>
+            <li><a href="#">Normal Fusion</a></li>
+            <li><a href="#">Triangle Fusion</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Side Nav -->
+  <ul class="sidenav" id="mobile-demo">
+    <li><a href="#">Home</a></li>
+    <li class="dropdown">
+      <a href="#" class="dropdown-trigger" data-target="mobile-persona1-dropdown">
+        Persona 1 <i class="material-icons right"></i>
+      </a>
+      <ul id="mobile-persona1-dropdown" class="dropdown-content">
+        <li><a href="#">Link 1</a></li>
+        <li><a href="#">Link 2</a></li>
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a href="#" class="dropdown-trigger" data-target="mobile-persona2-dropdown">
+        Persona 2 <i class="material-icons right"></i>
+      </a>
+      <ul id="mobile-persona2-dropdown" class="dropdown-content">
+        <li><a href="#">Link 1</a></li>
+        <li><a href="#">Link 2</a></li>
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a href="#" class="dropdown-trigger" data-target="mobile-persona3-dropdown">
+        Persona 3 <i class="material-icons right"></i>
+      </a>
+      <ul id="mobile-persona3-dropdown" class="dropdown-content">
+        <li><a href="#">Link 1</a></li>
+        <li><a href="#">Link 2</a></li>
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a href="#" class="dropdown-trigger" data-target="mobile-persona4-dropdown">
+        Persona 4 <i class="material-icons right"></i>
+      </a>
+      <ul id="mobile-persona4-dropdown" class="dropdown-content">
+        <li><a href="#">Link 1</a></li>
+        <li><a href="#">Link 2</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <!-- JavaScript to Initialize Components -->
+  <script>
+ document.addEventListener('DOMContentLoaded', function() {
+      var elems = document.querySelectorAll('.sidenav');
+      var instances = M.Sidenav.init(elems);
+
+      var dropdownOptions = {
+        hover: true,
+        coverTrigger: false,
+        alignment: 'right' // Adjust the alignment to your preference
+      };
+
+      var dropdowns = document.querySelectorAll('.dropdown-trigger');
+      var dropdownInstances = M.Dropdown.init(dropdowns, dropdownOptions);
+
+      var mobileDropdowns = document.querySelectorAll('.sidenav .dropdown-trigger');
+      var mobileDropdownInstances = M.Dropdown.init(mobileDropdowns, dropdownOptions);
+    });
+  </script>
+
+
     <h1 class="heading">Persona 3 FES Fusion Calculator</h1>
 <ng:view></ng:view>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
