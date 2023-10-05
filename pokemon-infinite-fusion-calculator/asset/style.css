@@ -254,15 +254,7 @@ nav ul li a:hover {
     text-align: center;
 }
 
-/* Common button styles */
-.button {
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    border: none;
-    border-radius: 5px;
-    margin: 5px;
-}
+
 
 /* Desktop styles */
 @media (min-width: 768px) {

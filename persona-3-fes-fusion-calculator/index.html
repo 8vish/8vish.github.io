@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Persona 3 FES Fusion Calculator</title>
-<link rel="stylesheet" href="/css/persona.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-<script src="/js/angular-0.9.19.min.js" ng:autobind></script>
-<script src="/js/data3fes.js"></script>
-<script src="/js/app.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Persona 3 FES Fusion Calculator</title>
+  <link rel="stylesheet" href="/css/persona.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <script src="/js/angular-0.9.19.min.js" ng:autobind></script>
+  <script src="/js/data3fes.js"></script>
+  <script src="/js/app.js"></script>
 </head>
+
 <body>
   <!-- Navbar -->
   <nav>
@@ -25,7 +27,7 @@
             <li><a href="/persona-3-fes-fusion-calculator/">Fusion Calculator</a></li>
             <li><a href="/persona-3-fes-normal-fusion/">Normal Fusion</a></li>
             <li><a href="/persona-3-fes-triangle-fusion/">Triangle Fusion</a></li>
-   
+
           </ul>
         </li>
         <li class="dropdown">
@@ -33,9 +35,10 @@
             Persona 3 Portable
           </a>
           <ul id="persona2-dropdown" class="dropdown-content">
-            <li><a href="/persona-3-portable-fusion-calculator/" class="waves-effect waves-blue">Persona 3 Portable Fusion Calculator</a></li>
-            <li><a href="/persona-3-portable-normal-fusion/" class="waves-effect waves-blue">Persona 3 Portable Normal Fusion</a></li>
-            <li><a href="/persona-3-fes-triangle-fusion/" class="waves-effect waves-blue">Persona 3 Portable Triangle Fusion</a></li>
+            <li><a href="/persona-3-portable-fusion-calculator/" class="waves-effect waves-blue">Fusion Calculator</a>
+            </li>
+            <li><a href="/persona-3-portable-normal-fusion/" class="waves-effect waves-blue">Normal Fusion</a></li>
+            <li><a href="/persona-3-fes-triangle-fusion/" class="waves-effect waves-blue">Triangle Fusion</a></li>
           </ul>
         </li>
         <li class="dropdown">
@@ -43,9 +46,9 @@
             Persona 4
           </a>
           <ul id="persona3-dropdown" class="dropdown-content">
-            <li><a href="/persona-4-fusion-calculator/" class="waves-effect waves-blue">Persona 4 Fusion Calculator</a></li>
-  <li><a href="/persona-4-normal-fusion/" class="waves-effect waves-blue">Persona 4 Normal Fusion</a></li>
-  <li><a href="/persona-4-triangle-fusion/" class="waves-effect waves-blue">Persona 4 Triangle Fusion</a></li>
+            <li><a href="/persona-4-fusion-calculator/" class="waves-effect waves-blue">Fusion Calculator</a></li>
+            <li><a href="/persona-4-normal-fusion/" class="waves-effect waves-blue">Normal Fusion</a></li>
+            <li><a href="/persona-4-triangle-fusion/" class="waves-effect waves-blue">Triangle Fusion</a></li>
           </ul>
         </li>
         <li class="dropdown">
@@ -53,9 +56,10 @@
             Persona 4 Golden
           </a>
           <ul id="persona4-dropdown" class="dropdown-content">
-            <li><a href="/persona-4-golden-fusion-calculator/" class="waves-effect waves-blue">Persona 4 Golden Fusion Calculator</a></li>
-            <li><a href="/persona-4-golden-normal-fusion/" class="waves-effect waves-blue">Persona 4 Golden Normal Fusion</a></li>
-            <li><a href="/persona-4-golden-triangle-fusion/"s class="waves-effect waves-blue">Persona 4 Golden Triangle Fusion</a></li>
+            <li><a href="/persona-4-golden-fusion-calculator/" class="waves-effect waves-blue">Fusion Calculator</a>
+            </li>
+            <li><a href="/persona-4-golden-normal-fusion/" class="waves-effect waves-blue">Normal Fusion</a></li>
+            <li><a href="/persona-4-golden-triangle-fusion/" s class="waves-effect waves-blue">Triangle Fusion</a></li>
           </ul>
         </li>
       </ul>
@@ -63,50 +67,61 @@
   </nav>
 
   <!-- Side Nav -->
-<ul id="mobile-demo" class="sidenav">
-  <li>
-    <div class="right-align">
-      <a href="#" class="sidenav-close"><span style="font-size: 3rem; margin: 20px;">&#x2716;</span></a>
-    </div>
-  </li>
-  <li>
-    <!--
+  <ul id="mobile-demo" class="sidenav">
+    <li>
+      <div class="right-align">
+        <a href="#" class="sidenav-close"><span style="font-size: 3rem; margin: 20px;">&#x2716;</span></a>
+      </div>
+    </li>
+    <li>
+      <!--
     <div class="center-align">
       <img src="/logo.jpeg" alt="Logo" width="100" loading="lazy">
     </div>-->
-  </li>
-  <div style="margin: 20px; border-radius: 10px;">
-  <li><a href="/" class="bold" style="text-align: center; font-size: medium; border: 1px solid auto;">Home - LastFusion.com</a></li></div>
-  <li class="divider"></li> <!-- Add a divider -->
-  <li><a href="/persona-3-fes-fusion-calculator/" class="waves-effect waves-blue">Persona 3 FES Fusion Calculator</a></li>
-  <li><a href="/persona-3-fes-normal-fusion/" class="waves-effect waves-blue">Persona 3 FES Normal Fusion</a></li>
-  <li><a href="/persona-3-fes-triangle-fusion/" class="waves-effect waves-blue">Persona 3 FES Triangle Fusion</a></li>
-  <li>
-  <li class="divider"></li> <!-- Add another divider -->
-  <li><a href="/persona-3-portable-fusion-calculator/" class="waves-effect waves-blue">Persona 3 Portable Fusion Calculator</a></li>
-  <li><a href="/persona-3-portable-normal-fusion/" class="waves-effect waves-blue">Persona 3 Portable Normal Fusion</a></li>
-  <li><a href="/persona-3-fes-triangle-fusion/" class="waves-effect waves-blue">Persona 3 Portable Triangle Fusion</a></li>
-  <li class="divider"></li> <!-- Add another divider -->
-  <li><a href="/persona-4-fusion-calculator/" class="waves-effect waves-blue">Persona 4 Fusion Calculator</a></li>
-  <li><a href="/persona-4-normal-fusion/" class="waves-effect waves-blue">Persona 4 Normal Fusion</a></li>
-  <li><a href="/persona-4-triangle-fusion/" class="waves-effect waves-blue">Persona 4 Triangle Fusion</a></li>
-  <li class="divider"></li> <!-- Add another divider -->
-  <li><a href="/persona-4-golden-fusion-calculator/" class="waves-effect waves-blue">Persona 4 Golden Fusion Calculator</a></li>
-  <li><a href="/persona-4-golden-normal-fusion/" class="waves-effect waves-blue">Persona 4 Golden Normal Fusion</a></li>
-  <li><a href="/persona-4-golden-triangle-fusion/"s class="waves-effect waves-blue">Persona 4 Golden Triangle Fusion</a></li>
-  <div class="divider"></div>
-  <li><a href="/persona-5-fusion-calculator/" class="waves-effect waves-blue">Persona 5 Fusion Calculator</a></li>
-  <div class="divider"></div>
-  <li><a href="/persona-5-royal-fusion-calculator/" class="waves-effect waves-blue">Persona 5 Royal Fusion Calculator</a></li>
-  <div class="divider"></div>
-<li>    <a href="/pokemon-infinite-fusion-calculator/" class="waves-effect waves-blue">Pokemon Infinite Fusion Calculator</a></li>
-  <!-- Rest of your mobile navigation -->
-</ul>
+    </li>
+    <div style="margin: 20px; border-radius: 10px;">
+      <li><a href="/" class="bold" style="text-align: center; font-size: medium; border: 1px solid auto;">Home -
+          LastFusion.com</a></li>
+    </div>
+    <li class="divider"></li> <!-- Add a divider -->
+    <li><a href="/persona-3-fes-fusion-calculator/" class="waves-effect waves-blue">Persona 3 FES Fusion Calculator</a>
+    </li>
+    <li><a href="/persona-3-fes-normal-fusion/" class="waves-effect waves-blue">Persona 3 FES Normal Fusion</a></li>
+    <li><a href="/persona-3-fes-triangle-fusion/" class="waves-effect waves-blue">Persona 3 FES Triangle Fusion</a></li>
+    <li>
+    <li class="divider"></li> <!-- Add another divider -->
+    <li><a href="/persona-3-portable-fusion-calculator/" class="waves-effect waves-blue">Persona 3 Portable Fusion
+        Calculator</a></li>
+    <li><a href="/persona-3-portable-normal-fusion/" class="waves-effect waves-blue">Persona 3 Portable Normal
+        Fusion</a></li>
+    <li><a href="/persona-3-fes-triangle-fusion/" class="waves-effect waves-blue">Persona 3 Portable Triangle Fusion</a>
+    </li>
+    <li class="divider"></li> <!-- Add another divider -->
+    <li><a href="/persona-4-fusion-calculator/" class="waves-effect waves-blue">Persona 4 Fusion Calculator</a></li>
+    <li><a href="/persona-4-normal-fusion/" class="waves-effect waves-blue">Persona 4 Normal Fusion</a></li>
+    <li><a href="/persona-4-triangle-fusion/" class="waves-effect waves-blue">Persona 4 Triangle Fusion</a></li>
+    <li class="divider"></li> <!-- Add another divider -->
+    <li><a href="/persona-4-golden-fusion-calculator/" class="waves-effect waves-blue">Persona 4 Golden Fusion
+        Calculator</a></li>
+    <li><a href="/persona-4-golden-normal-fusion/" class="waves-effect waves-blue">Persona 4 Golden Normal Fusion</a>
+    </li>
+    <li><a href="/persona-4-golden-triangle-fusion/" s class="waves-effect waves-blue">Persona 4 Golden Triangle
+        Fusion</a></li>
+    <div class="divider"></div>
+    <li><a href="/persona-5-fusion-calculator/" class="waves-effect waves-blue">Persona 5 Fusion Calculator</a></li>
+    <div class="divider"></div>
+    <li><a href="/persona-5-royal-fusion-calculator/" class="waves-effect waves-blue">Persona 5 Royal Fusion
+        Calculator</a></li>
+    <div class="divider"></div>
+    <li> <a href="/pokemon-infinite-fusion-calculator/" class="waves-effect waves-blue">Pokemon Infinite Fusion
+        Calculator</a></li>
+    <!-- Rest of your mobile navigation -->
+  </ul>
 
   <!-- JavaScript to Initialize Components -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       var elems = document.querySelectorAll('.sidenav');
       var instances = M.Sidenav.init(elems);
 
@@ -127,8 +142,9 @@
     });
   </script>
 
-    <h1 class="heading">Persona 3 FES Fusion Calculator</h1>
-<ng:view></ng:view>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <h1 class="heading">Persona 3 FES Fusion Calculator</h1>
+  <ng:view></ng:view>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
+
 </html>
