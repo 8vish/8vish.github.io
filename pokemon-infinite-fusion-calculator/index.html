@@ -10,12 +10,12 @@
     <meta name="description"
         content="Explore the world of Pokémon fusion with the Pokémon Infinite Fusion Calculator. Fuse different Pokémon, discover unique combinations, and create your ultimate team. Find detailed stats and abilities for your fused Pokémon. Start fusing now and embark on a fusion adventure!">
     <link rel="stylesheet" href="asset/style.css">
-    
+
     <link rel="stylesheet" href="asset/new.css">
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.2/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.2/css/bulma.min.css">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-1FENZWBJQP"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
@@ -40,196 +40,142 @@
         </header><!-- #masthead -->
         <div id="content" class="site-content">
             <div id="primary" class="content-area">
-    
-                    <h1>Pokemon Infinite Fusion Calculator</h1>
-                   
-                        <p id="text">
-                            Welcome to Pokemon Infinite Fusion! Fuse, create, and customize with custom sprites. Start
-                            now!
-                        </p>
-                        <div class="calculator">
-    
 
+                <h1>Pokemon Infinite Fusion Calculator</h1>
 
-
-
-                         
-                            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                            <div class="container">
-                                <div class="columns">
-                                    <div class="column">
-                                        <label for="fname1">First Pokémon</label>
-                                        <div class="field has-addons">
-                                            <div class="control is-expanded">
-                                                <input list="dlPkmn" type="text" id="fname1" name="fname1" class="input" value="" autocomplete="off">
-                                            </div>
-                                            <div class="control">
-                                                <button id="random1" class="button is-primary">
-                                                    <span class="button-addon" onclick="randomFirstPoke()">⤭</span>
-                                                </button>
-                                            </div>
-                                        </div>
+                <p id="text">
+                    Welcome to Pokemon Infinite Fusion! Fuse, create, and customize with custom sprites. Start
+                    now!
+                </p>
+                <div class="calculator">
+                    <div class="container">
+                        <div class="columns">
+                            <div class="column">
+                                <label for="fname1">First Pokémon</label>
+                                <div class="field has-addons">
+                                    <div class="control is-expanded">
+                                        <input list="dlPkmn" type="text" id="fname1" name="fname1" class="input"
+                                            value="" autocomplete="off">
                                     </div>
-                                    <div class="column">
-                                        <label for="fname2">Second Pokémon</label>
-                                        <div class="field has-addons">
-                                            <div class="control is-expanded">
-                                                <input list="dlPkmn" type="text" id="fname2" name="fname2" class="input" value="" autocomplete="off">
-                                            </div>
-                                            <div class="control">
-                                                <button id="random2" class="button is-primary">
-                                                    <span class="button-addon" onclick="randomSecondPoke()">⤭</span>
-                                                </button>
-                                            </div>
-                                        </div>
+                                    <div class="control">
+                                        <button id="random1" class="button is-primary">
+                                            <span class="button-addon" onclick="randomFirstPoke()">⤭</span>
+                                        </button>
                                     </div>
                                 </div>
-                        
-                                <div class="buttons flex-center">
-                                    <button id="random" class="button is-primary" onclick="randomBothPoke()">🎲 Random</button>
-                                    <button id="reset" class="button is-danger" onclick="resetPoke()">🔄 Reset</button>
-                                    <button id="button" class="button is-success" onclick="fusePoke()">🧩 Fuse</button>
+                            </div>
+                            <div class="column">
+                                <label for="fname2">Second Pokémon</label>
+                                <div class="field has-addons">
+                                    <div class="control is-expanded">
+                                        <input list="dlPkmn" type="text" id="fname2" name="fname2" class="input"
+                                            value="" autocomplete="off">
+                                    </div>
+                                    <div class="control">
+                                        <button id="random2" class="button is-primary">
+                                            <span class="button-addon" onclick="randomSecondPoke()">⤭</span>
+                                        </button>
+                                    </div>
                                 </div>
-                        
-
-
-
-
-
-
-
-
-                            <style>
-                                /* Custom CSS for button alignment */
-                                .button-addon {
-                                    display: flex;
-                                    align-items: center;
-                                    justify-content: center;
-                                }
-                        
-                                /* Media query for desktop screens */
-                                @media (min-width: 768px) {
-                                    .flex-center {
-                                        display: flex;
-                                        align-items: center;
-                                        justify-content: center;
-                                    }
-                                }
-                            </style>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                            <sector id="stats" class="stats" style="padding: opx;">
-                                <div id="PKML2">
-                                    <div>
-                                        <span id="dexnumber1">&nbsp;</span><span id="fusionid1">&nbsp;</span>
-                                    </div>
-                                    <img class="picpok" id="pic1" alt="" src="question.png">
-                                    <div id="FP1">pkm1/pkm2</div>
-                                    <div id="typecont">
-                                        <img class="pictype" id="p1" src="types/unknown.png">
-                                        <img class="pictype" id="p2" style="display:none">
-                                    </div>
-                                    <div class="monstats" id="hp1">HP: </div>
-                                    <div class="monstats" id="atk1">ATK: </div>
-                                    <div class="monstats" id="def1">DEF: </div>
-                                    <div class="monstats" id="spatk1">SPE.ATK: </div>
-                                    <div class="monstats" id="spdef1">SPE.DEF: </div>
-                                    <div class="monstats" id="spe1">SPEED: </div>
-                                    <div class="montotal" id="bs1">TOTAL: </div>
-                                    <div class="monab" id="ab1">ABILITY:</div>
-                                    <div class="monhab" id="hab1"></div>
-                                    <br>
-                                    <div class="monweak" data-default="x4: " id="weak14">x4: </div>
-                                    <div class="monweak" data-default="x2: " id="weak12">x2: </div>
-                                    <div class="monweak" data-default="x1: " id="weak11">x1: </div>
-                                    <div class="monweak" data-default="x0.5: " id="weak105">x0.5: </div>
-                                    <div class="monweak" data-default="x0.25: " id="weak1025">x0.25: </div>
-                                    <div class="monweak" data-default="x0: " id="weak100">x0: </div>
-                                </div>
-                                <div id="PKMR2">
-                                    <div>
-                                        <span id="dexnumber2">&nbsp;</span><span id="fusionid2">&nbsp;</span>
-                                    </div>
-                                    <img class="picpok" id="pic2" alt="" src="question.png">
-                                    <div id="FP2">pkm2/pkm1</div>
-                                    <div id="typecont">
-                                        <img class="pictype" id="p3" src="types/unknown.png">
-                                        <img class="pictype" id="p4" style="display:none">
-                                    </div>
-                                    <div class="monstats" id="hp2">HP: </div>
-                                    <div class="monstats" id="atk2">ATK: </div>
-                                    <div class="monstats" id="def2">DEF: </div>
-                                    <div class="monstats" id="spatk2">SPE.ATK: </div>
-                                    <div class="monstats" id="spdef2">SPE.DEF: </div>
-                                    <div class="monstats" id="spe2">SPEED: </div>
-                                    <div class="montotal" id="bs2">TOTAL: </div>
-                                    <div class="monab" id="ab2">ABILITY:</div>
-                                    <div class="monhab" id="hab2"></div>
-                                    <br>
-                                    <div class="monweak" data-default="x4: " id="weak24">x4: </div>
-                                    <div class="monweak" data-default="x2: " id="weak22">x2: </div>
-                                    <div class="monweak" data-default="x1: " id="weak21">x1: </div>
-                                    <div class="monweak" data-default="x0.5: " id="weak205">x0.5: </div>
-                                    <div class="monweak" data-default="x0.25: " id="weak2025">x0.25: </div>
-                                    <div class="monweak" data-default="x0: " id="weak200">x0: </div>
-                                </div>
-                            </sector>
-                            <!--<p id="bottom">All rights reserved to Pokémon</p>-->
-                            <br>
-                            <br>
-                            <hr>
-                            <br>
-                        </div>
-             
-                <div style="margin-top: 50px;"><span></span></div>
-                        <div class="container">
-                            <h2 class="title">How To use</h2>
-
-                            <div class="container">
-                                <p>Have you ever wondered what it would be like to fuse two Pok&eacute;mon together? Well, now you can find out with the Pok&eacute;mon Infinite Fusion Calculator! This nifty tool allows you to fuse any two Pok&eacute;mon together to create a completely new creature.</p>
-                                <p>To get started, simply choose two Pok&eacute;mon that you want to fuse together. Once you have chosen your Pok&eacute;mon, click the &quot;Fuse&quot; button to generate your new fused Pok&eacute;mon.</p>
-                                <p>Once the fusion process is complete, you will be able to see a picture of your new Pok&eacute;mon and learn more about its attributes. This includes its type, stats, and abilities.</p>
-                                <p>You can also use the calculator to generate random Pok&eacute;mon. This is a great way to find new and interesting Pok&eacute;mon that you might not have thought of before.</p>
-                                <p>So what are you waiting for? Start fusing Pok&eacute;mon today and see what you can create!</p>
                             </div>
                         </div>
+
+                        <div class="buttons flex-center center" style="justify-content: center; flex-wrap: wrap;">
+                            <button id="random" class="button is-primary" onclick="randomBothPoke()">🎲 Random</button>
+                            <button id="reset" class="button is-danger" onclick="resetPoke()">🔄 Reset</button>
+                            <button id="button" class="button is-success" onclick="fusePoke()">🧩 Fuse</button>
+                        </div>
+                 
+
+                        <sector id="stats" class="stats" style="padding: opx;">
+                            <div id="PKML2">
+                                <div>
+                                    <span id="dexnumber1">&nbsp;</span><span id="fusionid1">&nbsp;</span>
+                                </div>
+                                <img class="picpok" id="pic1" alt="" src="question.png">
+                                <div id="FP1">pkm1/pkm2</div>
+                                <div id="typecont">
+                                    <img class="pictype" id="p1" src="types/unknown.png">
+                                    <img class="pictype" id="p2" style="display:none">
+                                </div>
+                                <div class="monstats" id="hp1">HP: </div>
+                                <div class="monstats" id="atk1">ATK: </div>
+                                <div class="monstats" id="def1">DEF: </div>
+                                <div class="monstats" id="spatk1">SPE.ATK: </div>
+                                <div class="monstats" id="spdef1">SPE.DEF: </div>
+                                <div class="monstats" id="spe1">SPEED: </div>
+                                <div class="montotal" id="bs1">TOTAL: </div>
+                                <div class="monab" id="ab1">ABILITY:</div>
+                                <div class="monhab" id="hab1"></div>
+                                <br>
+                                <div class="monweak" data-default="x4: " id="weak14">x4: </div>
+                                <div class="monweak" data-default="x2: " id="weak12">x2: </div>
+                                <div class="monweak" data-default="x1: " id="weak11">x1: </div>
+                                <div class="monweak" data-default="x0.5: " id="weak105">x0.5: </div>
+                                <div class="monweak" data-default="x0.25: " id="weak1025">x0.25: </div>
+                                <div class="monweak" data-default="x0: " id="weak100">x0: </div>
+                            </div>
+                            <div id="PKMR2">
+                                <div>
+                                    <span id="dexnumber2">&nbsp;</span><span id="fusionid2">&nbsp;</span>
+                                </div>
+                                <img class="picpok" id="pic2" alt="" src="question.png">
+                                <div id="FP2">pkm2/pkm1</div>
+                                <div id="typecont">
+                                    <img class="pictype" id="p3" src="types/unknown.png">
+                                    <img class="pictype" id="p4" style="display:none">
+                                </div>
+                                <div class="monstats" id="hp2">HP: </div>
+                                <div class="monstats" id="atk2">ATK: </div>
+                                <div class="monstats" id="def2">DEF: </div>
+                                <div class="monstats" id="spatk2">SPE.ATK: </div>
+                                <div class="monstats" id="spdef2">SPE.DEF: </div>
+                                <div class="monstats" id="spe2">SPEED: </div>
+                                <div class="montotal" id="bs2">TOTAL: </div>
+                                <div class="monab" id="ab2">ABILITY:</div>
+                                <div class="monhab" id="hab2"></div>
+                                <br>
+                                <div class="monweak" data-default="x4: " id="weak24">x4: </div>
+                                <div class="monweak" data-default="x2: " id="weak22">x2: </div>
+                                <div class="monweak" data-default="x1: " id="weak21">x1: </div>
+                                <div class="monweak" data-default="x0.5: " id="weak205">x0.5: </div>
+                                <div class="monweak" data-default="x0.25: " id="weak2025">x0.25: </div>
+                                <div class="monweak" data-default="x0: " id="weak200">x0: </div>
+                            </div>
+                        </sector>
+                        <!--<p id="bottom">All rights reserved to Pokémon</p>-->
+                        <br>
+                        <br>
+                        <hr>
+                        <br>
                     </div>
-                    </main>
+
+                    <div style="margin-top: 50px;"><span></span></div>
+                    <div class="container">
+                        <h2 class="title">How To use</h2>
+
+                        <div class="container">
+                            <p>Have you ever wondered what it would be like to fuse two Pok&eacute;mon together? Well,
+                                now you can find out with the Pok&eacute;mon Infinite Fusion Calculator! This nifty tool
+                                allows you to fuse any two Pok&eacute;mon together to create a completely new creature.
+                            </p>
+                            <p>To get started, simply choose two Pok&eacute;mon that you want to fuse together. Once you
+                                have chosen your Pok&eacute;mon, click the &quot;Fuse&quot; button to generate your new
+                                fused Pok&eacute;mon.</p>
+                            <p>Once the fusion process is complete, you will be able to see a picture of your new
+                                Pok&eacute;mon and learn more about its attributes. This includes its type, stats, and
+                                abilities.</p>
+                            <p>You can also use the calculator to generate random Pok&eacute;mon. This is a great way to
+                                find new and interesting Pok&eacute;mon that you might not have thought of before.</p>
+                            <p>So what are you waiting for? Start fusing Pok&eacute;mon today and see what you can
+                                create!</p>
+                        </div>
+                    </div>
                 </div>
+                </main>
             </div>
         </div>
+    </div>
     </div>
 </body>
 <script src="asset/infiniteFusionData.js"></script>

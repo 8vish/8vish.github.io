@@ -1,114 +1,128 @@
 /* Reset default styles */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  /* Set a background color and font for the entire page */
-  body {
-    background-color: #f2f2f2;
-    font-family: Arial, sans-serif;
-  }
-  
-  /* Style the header */
-  h1 {
-    text-align: center;
-    padding: 20px 0;
-    background-color: #0078d4;
-    color: #fff;
-    font-size: 28px;
-  }
-  
-  /* Style the container for the calculator */
-  .container {
-    padding: 10px;
-    background-color: #fff;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-  }
-  
-  /* Style the text in the container */
-  #text {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #333;
-    font-size: 18px;
-  }
-  
-  /* Style the calculator section */
-  .calculator {
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-  }
-  
-  /* Style the input fields and buttons */
-  .form-style {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  .btn {
-    background-color: #0078d4;
-    color: #fff;
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
-    border-radius: 4px;
-  }
-  
-  .btn:hover {
-    background-color: #005299;
-  }
-  
- 
-  
-  .button:hover {
-    background-color: #56c1db;
-  }
-  
-  /* Style the stats section */
-  .stats {
-    margin-top: 20px;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Set a background color and font for the entire page */
+body {
+  background-color: #f2f2f2;
+  font-family: Arial, sans-serif;
+}
+
+/* Style the header */
+h1 {
+  text-align: center;
+  padding: 20px 0;
+  background-color: #0078d4;
+  color: #fff;
+  font-size: 28px;
+}
+
+/* Style the container for the calculator */
+.container {
+  padding: 10px;
+  background-color: #fff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+/* Style the text in the container */
+#text {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 18px;
+}
+
+/* Style the calculator section */
+.calculator {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Style the input fields and buttons */
+.form-style {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.btn {
+  background-color: #0078d4;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.btn:hover {
+  background-color: #005299;
+}
+
+
+/* Custom CSS for button alignment */
+.button-addon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Media query for desktop screens */
+@media (min-width: 768px) {
+  .flex-center {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 20px;
+    align-items: center;
+    justify-content: center;
   }
-  
-  /* Style individual Pokemon stat boxes */
-  #PKML2,
-  #PKMR2 {
-    flex: 1;
-   /* text-align: center;
+}
+
+.button:hover {
+  background-color: #56c1db;
+}
+
+/* Style the stats section */
+.stats {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+/* Style individual Pokemon stat boxes */
+#PKML2,
+#PKMR2 {
+  flex: 1;
+  /* text-align: center;
     background-color: #fff;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
     margin-bottom: 20px; */
-  }
-  
-  /* Style other elements inside the stat boxes as needed */
-   .buttons {
-    margin-top: 15px;
-   }
-  
-  .pictype {
-    max-width: 150px;
-    margin: 5px auto;
-  }
-  
-  .monstats,
-  .montotal,
-  .monab,
-  .monhab,
-  .monweak {
-    margin: 10px 0;
-    font-weight: bold;
-  }
-  
+}
+
+/* Style other elements inside the stat boxes as needed */
+.buttons {
+  margin-top: 15px;
+}
+
+.pictype {
+  max-width: 150px;
+  margin: 5px auto;
+}
+
+.monstats,
+.montotal,
+.monab,
+.monhab,
+.monweak {
+  margin: 10px 0;
+  font-weight: bold;
+}
