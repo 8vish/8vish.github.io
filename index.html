@@ -3,39 +3,143 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Link Library</title>
-    <!-- Include Materialize CSS and JavaScript files -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <title>Last Fusion - Link Library</title>
+    <meta name="description" content="Discover a wide range of fusion calculators and tools for your favorite games and activities. Last Fusion provides a comprehensive library of resources to enhance your experience.">
+    <!-- Include Bulma CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            background-color: #f2f2f2;
+        }
+        .link-box {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 1rem;
+            transition: transform 0.2s;
+        }
+        .link-box:hover {
+            transform: scale(1.05);
+        }
+        /* Custom CSS for grid and flex layout */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+
+    </style>
 </head>
 <body>
-    <nav>
-        <div class="nav-wrapper blue">
-            <div class="container">
-                <a href="#" class="brand-logo">Link Library</a>
+    <section class="section">
+        <div class="container">
+            <h1 class="title is-4 has-text-centered mb-5">
+                Last Fusion - Link Library
+            </h1>
+            <div class="field has-addons has-addons-centered mb-5">
+                <div class="control">
+                    <input type="text" id="searchInput" class="input" placeholder="Search links..." oninput="searchLinks()">
+                </div>
+                <div class="control">
+                    <a class="button is-primary" onclick="searchLinks()">Search</a>
+                </div>
+            </div>
+            <div class="grid-container flex-container" id="linkList">
+                <!-- Links will be dynamically added here -->
             </div>
         </div>
-    </nav>
-    <div class="container mt-3">
-        <div class="row">
-            <div class="input-field col s12">
-                <input type="text" id="searchInput" placeholder="Search...">
-                <label for="searchInput">Search</label>
-            </div>
-        </div>
-        <ul class="collection" id="linkList">
-            <!-- Links with subdirectories will be dynamically added here -->
-        </ul>
-    </div>
+    </section>
     <script>
         const linkData = [
             {
-                title: "Persona 3 FES",
-                subdirectory: "persona-3-fes",
+                anchorText: "Persona 3 FES Fusion Calculator",
+                slug: "persona-3-fes-fusion-calculator"
             },
             {
-                title: "Persona 4",
-                subdirectory: "persona-4",
+                anchorText: "Persona 3 FES Normal Fusion",
+                slug: "persona-3-fes-normal-fusion"
+            },
+            {
+                anchorText: "Persona 3 FES Triangle Fusion",
+                slug: "persona-3-fes-triangle-fusion"
+            },
+            {
+                anchorText: "Persona 3 Portable Fusion Calculator",
+                slug: "persona-3-portable-fusion-calculator"
+            },
+            {
+                anchorText: "Persona 3 Portable Normal Fusion",
+                slug: "persona-3-portable-normal-fusion"
+            },
+            {
+                anchorText: "Persona 3 Portable Triangle Fusion",
+                slug: "persona-3-portable-triangle-fusion"
+            },
+            {
+                anchorText: "Persona 4 Fusion Calculator",
+                slug: "persona-4-fusion-calculator"
+            },
+            {
+                anchorText: "Persona 4 Golden Fusion Calculator",
+                slug: "persona-4-golden-fusion-calculator"
+            },
+            {
+                anchorText: "Persona 4 Golden Normal Fusion",
+                slug: "persona-4-golden-normal-fusion"
+            },
+            {
+                anchorText: "Persona 4 Golden Triangle Fusion",
+                slug: "persona-4-golden-triangle-fusion"
+            },
+            {
+                anchorText: "Persona 4 Normal Fusion",
+                slug: "persona-4-normal-fusion"
+            },
+            {
+                anchorText: "Persona 4 Triangle Fusion",
+                slug: "persona-4-triangle-fusion"
+            },
+            {
+                anchorText: "Persona 5 Fusion Calculator",
+                slug: "persona-5-fusion-calculator"
+            },
+            {
+                anchorText: "Persona 5 Royal Fusion Calculator",
+                slug: "persona-5-royal-fusion-calculator"
+            },
+            {
+                anchorText: "Pokemon Infinite Fusion Calculator",
+                slug: "pokemon-infinite-fusion-calculator"
+            },
+            {
+                anchorText: "Random Pokemon Generator",
+                slug: "random-pokemon-generator"
+            },
+            {
+                anchorText: "EDH Power Level Calculator",
+                slug: "edh-power-level-calculator"
+            },
+            {
+                anchorText: "Female Delusion Calculator",
+                slug: "female-delusion-calculator"
+            },
+            {
+                anchorText: "MTG Hypergeometric Calculator",
+                slug: "mtg-hypergeometric-calculator"
+            },
+            {
+                anchorText: "MTG Land Calculator",
+                slug: "mtg-land-calculator"
+            },
+            {
+                anchorText: "MTG Mana Base Calculator",
+                slug: "mtg-mana-base-calculator"
+            },
+            {
+                anchorText: "MTG Mana Calculator",
+                slug: "mtg-mana-calculator"
             },
             // Add more link data here
         ];
@@ -43,28 +147,89 @@
         const linkList = document.getElementById('linkList');
         const searchInput = document.getElementById('searchInput');
 
-        function filterLinks() {
-            const searchTerm = searchInput.value.toLowerCase();
+        // Function to display links
+        function displayLinks(links) {
             linkList.innerHTML = '';
 
-            for (const link of linkData) {
-                if (link.title.toLowerCase().includes(searchTerm)) {
-                    const li = document.createElement('li');
-                    li.classList.add('collection-item');
-                    const a = document.createElement('a');
-                    a.href = link.subdirectory + '.html'; // Assuming subdirectories have corresponding HTML files
-                    a.textContent = link.title;
-                    li.appendChild(a);
-                    linkList.appendChild(li);
-                }
-            }
+            links.forEach(link => {
+                const linkBox = document.createElement('div');
+                linkBox.classList.add('link-box', 'grid-item', 'flex-item');
+
+                const anchor = document.createElement('a');
+                anchor.href = `${link.slug}.html`;
+                anchor.textContent = link.anchorText;
+                anchor.classList.add('has-text-weight-semibold');
+
+                linkBox.appendChild(anchor);
+                linkList.appendChild(linkBox);
+            });
         }
 
-        // Initial list display
-        filterLinks();
+        // Initial display of links
+        displayLinks(linkData);
 
-        // Listen for input changes
-        searchInput.addEventListener('input', filterLinks);
+        // Search functionality
+        function searchLinks() {
+            const searchTerm = searchInput.value.toLowerCase();
+            const filteredLinks = linkData.filter(link => link.anchorText.toLowerCase().includes(searchTerm));
+            displayLinks(filteredLinks);
+        }
     </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+        
+        -->
