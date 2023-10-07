@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Last Fusion - Link Library</title>
-    <meta name="description" content="Discover a wide range of fusion calculators and tools for your favorite games and activities. Last Fusion provides a comprehensive library of resources to enhance your experience.">
+    <meta name="description"
+        content="Discover a wide range of fusion calculators and tools for your favorite games and activities. Last Fusion provides a comprehensive library of resources to enhance your experience.">
     <!-- Include Bulma CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css" rel="stylesheet">
     <!-- Custom CSS -->
@@ -12,6 +14,7 @@
         body {
             background-color: #f2f2f2;
         }
+
         .link-box {
             background-color: #fff;
             border: 1px solid #ccc;
@@ -19,19 +22,20 @@
             padding: 1rem;
             transition: transform 0.2s;
         }
+
         .link-box:hover {
             transform: scale(1.05);
         }
+
         /* Custom CSS for grid and flex layout */
         .grid-container {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
             gap: 20px;
         }
-
-
     </style>
 </head>
+
 <body>
     <section class="section">
         <div class="container">
@@ -40,7 +44,8 @@
             </h1>
             <div class="field has-addons has-addons-centered mb-5">
                 <div class="control">
-                    <input type="text" id="searchInput" class="input" placeholder="Search links..." oninput="searchLinks()">
+                    <input type="text" id="searchInput" class="input" placeholder="Search links..."
+                        oninput="searchLinks()">
                 </div>
                 <div class="control">
                     <a class="button is-primary" onclick="searchLinks()">Search</a>
@@ -175,61 +180,15 @@
             displayLinks(filteredLinks);
         }
     </script>
+    <!-- Script to load AdSense ad code after page load -->
+    <script>
+        window.onload = function () {
+            var adScript = document.createElement('script');
+            adScript.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3094576877738534";
+            adScript.crossOrigin = "anonymous";
+            document.body.appendChild(adScript);
+        };
+    </script>
 </body>
+
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--
-        
-        -->
