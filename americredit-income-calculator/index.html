@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GM Financial AmeriCredit Income Calculator</title>
+    <meta name="description" content="Calculate your eligibility and estimated monthly payment with the GM Financial AmeriCredit Income Calculator. Enter your monthly income, expenses, and debt obligations to determine your eligibility for AmeriCredit financing.">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .result {
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">GM Financial AmeriCredit Income Calculator</h1>
+
+        <!-- Section 1: Enter Your Monthly Gross Income -->
+        <div class="card mb-3">
+            <div class="card-body">
+                <h5 class="card-title">1. Enter Your Monthly Gross Income:</h5>
+                <div class="row">
+                    <div class="col-md-3">
+                        <label for="salary">Salary/Wages: $</label>
+                        <input class="form-control" type="number" id="salary">
+                    </div>
+                    <div class="col-md-3">
+                        <label for="rentalIncome">Rental Income: $</label>
+                        <input class="form-control" type="number" id="rentalIncome">
+                    </div>
+                    <div class="col-md-3">
+                        <label for="businessIncome">Business Income: $</label>
+                        <input class="form-control" type="number" id="businessIncome">
+                    </div>
+                    <div class="col-md-3">
+                        <label for="otherIncome">Other Income: $</label>
+                        <input class="form-control" type="number" id="otherIncome">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 2: Deductions (if applicable) -->
+        <div class="card mb-3">
+            <div class="card-body">
+                <h5 class="card-title">2. Deductions (if applicable):</h5>
+                <div class="row">
+                    <div class="col-md-3">
+                        <label for="federalTax">Federal Income Tax: $</label>
+                        <input class="form-control" type="number" id="federalTax">
+                    </div>
+                    <div class="col-md-3">
+                        <label for="stateTax">State Income Tax: $</label>
+                        <input class="form-control" type="number" id="stateTax">
+                    </div>
+                    <div class="col-md-3">
+                        <label for="socialSecurityTax">Social Security Tax: $</label>
+                        <input class="form-control" type="number" id="socialSecurityTax">
+                    </div>
+                    <div class="col-md-3">
+                        <label for="medicareTax">Medicare Tax: $</label>
+                        <input class="form-control" type="number" id="medicareTax">
+                    </div>
+                    <div class="col-md-3">
+                        <label for="retirementContributions">Retirement Contributions: $</label>
+                        <input class="form-control" type="number" id="retirementContributions">
+                    </div>
+                    <div class="col-md-3">
+                        <label for="otherDeductions">Other Deductions: $</label>
+                        <input class="form-control" type="number" id="otherDeductions">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 3: Additional Income (if applicable) -->
+        <div class="card mb-3">
+            <div class="card-body">
+                <h5 class="card-title">3. Additional Income (if applicable):</h5>
+                <div class="row">
+                    <div class="col-md-3">
+                        <label for="bonuses">Bonuses: $</label>
+                        <input class="form-control" type="number" id="bonuses">
+                    </div>
+                    <div class="col-md-3">
+                        <label for="investmentIncome">Investment Income: $</label>
+                        <input class="form-control" type="number" id="investmentIncome">
+                    </div>
+                    <div class="col-md-3">
+                        <label for="additionalRentalIncome">Rental Income: $</label>
+                        <input class="form-control" type="number" id="additionalRentalIncome">
+                    </div>
+                    <div class="col-md-3">
+                        <label for="additionalOtherIncome">Other Income: $</label>
+                        <input class="form-control" type="number" id="additionalOtherIncome">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 4: Calculate Total Monthly Income -->
+        <div class="card mb-3">
+            <div class="card-body">
+                <h5 class="card-title">4. Calculate Total Monthly Income:</h5>
+                <div class="row">
+                    <div class="col-md-12">
+                        <p class="result">Total Income: $<span id="totalIncome">0.00</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 5: Monthly Expenses (estimates) -->
+        <div class="card mb-3">
+            <div class="card-body">
+                <h5 class="card-title">5. Monthly Expenses (estimates):</h5>
+                <div class="row">
+                    <div class="col-md-3">
+                        <label for="rentMortgage">Rent/Mortgage: $</label>
+                        <input class="form-control" type="number" id="rentMortgage">
+                    </div>
+                    <div class="col-md-3">
+                        <label for="utilities">Utilities: $</label>
+                        <input class="form-control" type="number" id="utilities">
+                    </div>
+                    <div class="col-md-3">
+                        <label for="groceries">Groceries: $</label>
+                        <input class="form-control" type="number" id="groceries">
+                    </div>
+                    <div class="col-md-3">
+                        <label for="transportation">Transportation: $</label>
+                        <input class="form-control" type="number" id="transportation">
+                    </div>
+                    <div class="col-md-3">
+                        <label for="healthInsurance">Health Insurance: $</label>
+                        <input class="form-control" type="number" id="healthInsurance">
+                    </div>
+                    <div class="col-md-3">
+                        <label for="otherMonthlyExpenses">Other Monthly Expenses: $</label>
+                        <input class="form-control" type="number" id="otherMonthlyExpenses">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 6: Calculate Disposable Income -->
+        <div class="card mb-3">
+            <div class="card-body">
+                <h5 class="card-title">6. Calculate Disposable Income:</h5>
+                <div class="row">
+                    <div class="col-md-12">
+                        <p class="result">Disposable Income: $<span id="disposableIncome">0.00</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 7: Debt Obligations (if applicable) -->
+        <div class="card mb-3">
+            <div class="card-body">
+                <h5 class="card-title">7. Debt Obligations (if applicable):</h5>
+                <div class="row">
+                    <div class="col-md-3">
+                        <label for="monthlyLoanPayments">Monthly Loan Payments: $</label>
+                        <input class="form-control" type="number" id="monthlyLoanPayments">
+                    </div>
+                    <div class="col-md-3">
+                        <label for="creditCardPayments">Credit Card Payments: $</label>
+                        <input class="form-control" type="number" id="creditCardPayments">
+                    </div>
+                    <div class="col-md-3">
+                        <label for="otherDebtPayments">Other Debt Payments: $</label>
+                        <input class="form-control" type="number" id="otherDebtPayments">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 8: Calculate AmeriCredit Eligibility -->
+        <div class="card mb-3">
+            <div class="card-body">
+                <h5 class="card-title">8. Calculate AmeriCredit Eligibility:</h5>
+                <div class="row">
+                    <div class="col-md-12">
+                        <p class="result">AmeriCredit Eligibility: $<span id="ameriCreditEligibility">0.00</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 9: Loan Term (in months) -->
+        <div class="card mb-3">
+            <div class="card-body">
+                <h5 class="card-title">9. Loan Term (in months):</h5>
+                <div class="row">
+                    <div class="col-md-3">
+                        <label for="loanTerm">Loan Term (months):</label>
+                        <input class="form-control" type="number" id="loanTerm">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 10: Calculate Monthly Payment -->
+        <div class="card mb-3">
+            <div class="card-body">
+                <h5 class="card-title">10. Calculate Monthly Payment:</h5>
+                <div class="row">
+                    <div class="col-md-12">
+                        <p class="result">Your Estimated Monthly Payment to GM Financial: $<span id="monthlyPayment">0.00</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center">
+            <button class="btn btn-primary" id="calculateButton">Calculate</button>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.getElementById("calculateButton").addEventListener("click", function () {
+            // Retrieve values from input fields
+            const salary = parseFloat(document.getElementById("salary").value) || 0;
+            const rentalIncome = parseFloat(document.getElementById("rentalIncome").value) || 0;
+            const businessIncome = parseFloat(document.getElementById("businessIncome").value) || 0;
+            const otherIncome = parseFloat(document.getElementById("otherIncome").value) || 0;
+            const federalTax = parseFloat(document.getElementById("federalTax").value) || 0;
+            const stateTax = parseFloat(document.getElementById("stateTax").value) || 0;
+            const socialSecurityTax = parseFloat(document.getElementById("socialSecurityTax").value) || 0;
+            const medicareTax = parseFloat(document.getElementById("medicareTax").value) || 0;
+            const retirementContributions = parseFloat(document.getElementById("retirementContributions").value) || 0;
+            const otherDeductions = parseFloat(document.getElementById("otherDeductions").value) || 0;
+            const bonuses = parseFloat(document.getElementById("bonuses").value) || 0;
+            const investmentIncome = parseFloat(document.getElementById("investmentIncome").value) || 0;
+            const additionalRentalIncome = parseFloat(document.getElementById("additionalRentalIncome").value) || 0;
+            const additionalOtherIncome = parseFloat(document.getElementById("additionalOtherIncome").value) || 0;
+            const rentMortgage = parseFloat(document.getElementById("rentMortgage").value) || 0;
+            const utilities = parseFloat(document.getElementById("utilities").value) || 0;
+            const groceries = parseFloat(document.getElementById("groceries").value) || 0;
+            const transportation = parseFloat(document.getElementById("transportation").value) || 0;
+            const healthInsurance = parseFloat(document.getElementById("healthInsurance").value) || 0;
+            const otherMonthlyExpenses = parseFloat(document.getElementById("otherMonthlyExpenses").value) || 0;
+            const monthlyLoanPayments = parseFloat(document.getElementById("monthlyLoanPayments").value) || 0;
+            const creditCardPayments = parseFloat(document.getElementById("creditCardPayments").value) || 0;
+            const otherDebtPayments = parseFloat(document.getElementById("otherDebtPayments").value) || 0;
+            const loanTerm = parseFloat(document.getElementById("loanTerm").value) || 0;
+
+            // Calculate Total Monthly Income
+            const totalIncome = salary + rentalIncome + businessIncome + otherIncome + bonuses + investmentIncome + additionalRentalIncome + additionalOtherIncome;
+
+            // Calculate Disposable Income
+            const disposableIncome = totalIncome - (federalTax + stateTax + socialSecurityTax + medicareTax + retirementContributions + otherDeductions);
+
+            // Calculate AmeriCredit Eligibility
+            const ameriCreditEligibility = disposableIncome - (monthlyLoanPayments + creditCardPayments + otherDebtPayments);
+
+            // Calculate Monthly Payment
+            const monthlyPayment = ameriCreditEligibility / loanTerm;
+
+            // Update the result fields
+            document.getElementById("totalIncome").textContent = totalIncome.toFixed(2);
+            document.getElementById("disposableIncome").textContent = disposableIncome.toFixed(2);
+            document.getElementById("ameriCreditEligibility").textContent = ameriCreditEligibility.toFixed(2);
+            document.getElementById("monthlyPayment").textContent = monthlyPayment.toFixed(2);
+        });
+    </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1365412820601626"
+    crossorigin="anonymous"></script>
+</body>
+</html>
