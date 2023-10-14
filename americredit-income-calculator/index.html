@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GM Financial AmeriCredit Income Calculator</title>
-    <meta name="description" content="Calculate your eligibility and estimated monthly payment with the GM Financial AmeriCredit Income Calculator. Enter your monthly income, expenses, and debt obligations to determine your eligibility for AmeriCredit financing.">
+    <meta name="description"
+        content="Calculate your eligibility and estimated monthly payment with the GM Financial AmeriCredit Income Calculator. Enter your monthly income, expenses, and debt obligations to determine your eligibility for AmeriCredit financing.">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
@@ -26,7 +28,9 @@
     </style>
 
 </head>
+
 <body>
+
     <div class="container">
         <h1 class="text-center">GM Financial AmeriCredit Income Calculator</h1>
 
@@ -222,7 +226,8 @@
                 <h5 class="card-title">10. Calculate Monthly Payment:</h5>
                 <div class="row">
                     <div class="col-md-12">
-                        <p class="result">Your Estimated Monthly Payment to GM Financial: $<span id="monthlyPayment">0.00</span></p>
+                        <p class="result">Your Estimated Monthly Payment to GM Financial: $<span
+                                id="monthlyPayment">0.00</span></p>
                     </div>
                 </div>
             </div>
@@ -264,40 +269,41 @@
             const creditCardPayments = parseFloat(document.getElementById("creditCardPayments").value) || 0;
             const otherDebtPayments = parseFloat(document.getElementById("otherDebtPayments").value) || 0;
             const loanTerm = parseFloat(document.getElementById("loanTerm").value) || 0;
-    
+
             // Calculate Total Monthly Income
             const totalIncome = salary + rentalIncome + businessIncome + otherIncome + bonuses + investmentIncome + additionalRentalIncome + additionalOtherIncome;
-    
+
             // Calculate Disposable Income
             const disposableIncome = totalIncome - (federalTax + stateTax + socialSecurityTax + medicareTax + retirementContributions + otherDeductions);
-    
+
             // Calculate AmeriCredit Eligibility
             const ameriCreditEligibility = disposableIncome - (monthlyLoanPayments + creditCardPayments + otherDebtPayments);
-    
+
             // Calculate Monthly Payment
             const monthlyPayment = ameriCreditEligibility / loanTerm;
-    
+
             // Update the result fields
             document.getElementById("totalIncome").textContent = totalIncome.toFixed(2);
             document.getElementById("disposableIncome").textContent = disposableIncome.toFixed(2);
             document.getElementById("ameriCreditEligibility").textContent = ameriCreditEligibility.toFixed(2);
             document.getElementById("monthlyPayment").textContent = monthlyPayment.toFixed(2);
         }
-    
+
         // Add click event listener for the "Calculate" button
         document.getElementById("calculateButton").addEventListener("click", performCalculation);
-    
+
         // Add input event listeners to all input fields
         const inputFields = document.querySelectorAll('input[type="number"]');
         inputFields.forEach(function (inputField) {
             inputField.addEventListener("input", performCalculation);
         });
-    
+
         // Perform initial calculation and display results
         performCalculation();
     </script>
-    
+
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1365412820601626"
-    crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script>
 </body>
+
 </html>
